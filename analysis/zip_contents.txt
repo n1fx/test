@@ -1,0 +1,5 @@
+ChatGPT_APK/
+ChatGPT_APK/base.apk
+ChatGPT_APK/split_config.arm64_v8a.apk
+ChatGPT_APK/split_config.ja.apk
+ChatGPT_APK/split_config.xxhdpi.apk
