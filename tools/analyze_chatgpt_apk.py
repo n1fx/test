@@ -93,6 +93,7 @@ def main():
     write("mcp_executor_methods_index.txt", "\n".join(sorted(set(method_lines))) + "\n")
     write("mcp_executor_methods_disassembly.txt", "\n".join(disassembly) + "\n")
     write("target_method_full.txt", "\n".join(full_target_methods) + "\n")
+    write("selected_classes_full.txt", "\n".join(selected_class_dump) + "\n")
     print(f"Inspected {len(apk_paths)} APK(s); string hits={len(dex_lines)}; methods={len(method_lines)}")
 
 if __name__ == "__main__":
