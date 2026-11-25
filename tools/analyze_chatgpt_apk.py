@@ -42,7 +42,8 @@ def main():
             a, dexes, analysis = AnalyzeAPK(str(apk_path))
             manifest = a.get_android_manifest_xml()
             if manifest is not None:
-                from lxml import etree\n                manifest_text = etree.tostring(manifest, encoding='unicode', pretty_print=True)
+                from lxml import etree
+                manifest_text = etree.tostring(manifest, encoding='unicode', pretty_print=True)
                 manifest_name = apk_path.stem + ".manifest.xml"
                 write(manifest_name, manifest_text)
                 manifests.append(manifest_name)
