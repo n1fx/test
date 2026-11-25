@@ -1,1 +1,123 @@
+base.apk	classes1.dex	39801	3980115485
+base.apk	classes1.dex	deviceexecutor	Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;
+base.apk	classes1.dex	mcp	Invalid signed RMCP provider offer
+base.apk	classes1.dex	mcp	RMCP registration binding mismatch
+base.apk	classes1.dex	mcp	Whether to include truncated command output, reasoning content, and file diffs. MCP and dynamic-tool result payloads remain omitted.
+base.apk	classes1.dex	mcp	https://platform.openai.com/docs/mcp#risks-and-safety
+base.apk	classes1.dex	mcp	mcp://kakao
+base.apk	classes1.dex	mcp	mcp://komi
+base.apk	classes1.dex	mcp	rmcp
+base.apk	classes1.dex	mcp	use_handle_rmcp
+base.apk	classes10.dex	mcp	/mcp
+base.apk	classes10.dex	mcp	CodexMcpExtensionAction{
+base.apk	classes10.dex	mcp	mcp-
+base.apk	classes10.dex	mcp	type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction
+base.apk	classes10.dex	mcp	x-codex-rmcp-grant
+base.apk	classes10.dex	tool_call	CODEX_CHATGPT_HANDOFF_LIFECYCLE_ACTION_TOOL_CALLED
+base.apk	classes3.dex	localfunctionexecutor	LocalFunctionExecutorImpl
+base.apk	classes3.dex	mcp	686lQhd7kGqR8F2BTZNa0MCpbpQuNsmhT7vyRHy9apU=
+base.apk	classes3.dex	mcp	Lmcp0;
+base.apk	classes3.dex	mcp	This app tool is no longer available through dynamic tools. Use the codex_app MCP server. If that server is unavailable on this host, task delegation is unavailable.
+base.apk	classes3.dex	mcp	item/mcpToolCall/progress
+base.apk	classes3.dex	mcp	mcpServerOpenaiFormElicitation
+base.apk	classes3.dex	mcp	type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction
+base.apk	classes4.dex	android-executor	file:///android-executor
+base.apk	classes4.dex	android-executor	file:///android-executor/device-executor
+base.apk	classes4.dex	executorRegistrationId	ExecutorRegistrationId(value=
+base.apk	classes4.dex	executorRegistrationId	executorRegistrationId
+base.apk	classes4.dex	mcp	CodexRemoteMcpServerElicitationParam
+base.apk	classes4.dex	mcp	MCP
+base.apk	classes4.dex	mcp	RMCP handshake grant rejected
+base.apk	classes4.dex	mcp	item/mcpToolCall/progress
+base.apk	classes4.dex	mcp	mcpServer/elicitation/request
+base.apk	classes4.dex	mcp	mcp_servers
+base.apk	classes4.dex	mcp	mcp_tool_execution_error
+base.apk	classes4.dex	mcp	setMcpModelContext
+base.apk	classes4.dex	mcp,Mcp-Session-Id	Mcp-Session-Id
+base.apk	classes4.dex	mcp,android-executor,39801	[mcp_servers.android_native]
+url = "http://127.0.0.1:39801/android-executor/mcp"
 
+base.apk	classes4.dex	mcp,android-executor,39801	http://127.0.0.1:39801/android-executor/mcp
+base.apk	classes4.dex	mcp,tool_call	mcp_tool_call
+base.apk	classes4.dex	tool_result	tool_result
+base.apk	classes5.dex	mcp	/ps/mcp
+base.apk	classes5.dex	mcp	CodexRemoteMcpServerElicitationParam
+base.apk	classes5.dex	mcp	mcp
+base.apk	classes5.dex	mcp	mcp-resource://codex_apps/
+base.apk	classes5.dex	mcp	mcp/skill
+base.apk	classes5.dex	mcp	mcpServer/elicitation/request
+base.apk	classes5.dex	mcp	ps/mcp
+base.apk	classes5.dex	tool_result	call_tool_result
+base.apk	classes5.dex	tools/call	tools/call
+base.apk	classes6.dex	deviceexecutor	DeviceExecutor
+base.apk	classes6.dex	mcp	Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+base.apk	classes6.dex	mcp	Lmcp;
+base.apk	classes6.dex	mcp	McpServerElicitation
+base.apk	classes6.dex	mcp	](mcp-resource://codex_apps/
+base.apk	classes6.dex	mcp	codexMcpElicitation
+base.apk	classes6.dex	mcp	codexMcpElicitationResponse
+base.apk	classes6.dex	mcp	disableMcp
+base.apk	classes6.dex	mcp	eUYXnyRncMTgVImrrQnRt2MCp7_1kmpplpuMRAP_Mv0=
+base.apk	classes6.dex	mcp	https://platform.openai.com/docs/mcp#risks-and-safety
+base.apk	classes6.dex	mcp	mcp-resource://codex_apps/
+base.apk	classes6.dex	mcp	mcp/skill
+base.apk	classes6.dex	mcp	mcpAppModelContexts
+base.apk	classes6.dex	mcp	mcpAppResourceUri
+base.apk	classes6.dex	mcp	mcpServer/elicitation/request
+base.apk	classes6.dex	mcp	mcpServerOpenaiFormElicitation
+base.apk	classes6.dex	mcp	mcpToolCall
+base.apk	classes6.dex	mcp	mcp__codex_app__
+base.apk	classes6.dex	mcp	mcp_request_meta
+base.apk	classes6.dex	mcp	mcp_servers.codex_app
+base.apk	classes6.dex	mcp	protobuf_analytics_events.v1.CodexMcpExtensionAction
+base.apk	classes6.dex	mcp,tool_call	mcp_tool_call
+base.apk	classes6.dex	tool_call	tool_call_safety_summary
+base.apk	classes6.dex	tool_result	call_tool_result
+base.apk	classes6.dex	tool_result	tool_result
+base.apk	classes6.dex	tools/call	tools/call
+base.apk	classes6.dex	tools/list	tools/list
+base.apk	classes7.dex	mcp	
+        |Tool registration will proceed, but this may cause compatibility issues.
+        |Consider updating the tool name to conform to the MCP tool naming standard.
+        |See SEP-986: https://github.com/modelcontextprotocol/modelcontextprotocol/issues/986
+        
+base.apk	classes7.dex	mcp	CodexRemoteMcpServerElicitationParam
+base.apk	classes7.dex	mcp	CodexRemoteMcpServerElicitationPromptContent
+base.apk	classes7.dex	mcp	CodexRemoteMcpServerElicitationRequestCard
+base.apk	classes7.dex	mcp	CodexRemoteMcpServerElicitationSheetContent
+base.apk	classes7.dex	mcp	CodexRemoteMcpServerElicitationUrlParam
+base.apk	classes7.dex	mcp	Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+base.apk	classes7.dex	mcp	Lmcp0;
+base.apk	classes7.dex	mcp	[Lmcp0;
+base.apk	classes7.dex	mcp	item/mcpToolCall/progress
+base.apk	classes7.dex	mcp	mcp
+base.apk	classes7.dex	mcp	mcp-resource://codex_apps/
+base.apk	classes7.dex	mcp	mcpAppCapabilities
+base.apk	classes7.dex	mcp	mcpAppResourceUri
+base.apk	classes7.dex	mcp	mcpModelContext
+base.apk	classes7.dex	mcp	mcpServer/elicitation/request
+base.apk	classes7.dex	mcp	mcpToolCall
+base.apk	classes7.dex	mcp	mcp_app
+base.apk	classes7.dex	mcp	ps/mcp
+base.apk	classes7.dex	mcp	rmcp
+base.apk	classes7.dex	mcp	sendMcpMessage
+base.apk	classes7.dex	mcp	updateMcpModelContext
+base.apk	classes7.dex	mcp,deviceexecutor,RmcpHttp2Server	onFrame(Lcom/openai/feature/deviceexecutor/impl/RmcpHttp2Server$Frame;)V
+base.apk	classes7.dex	mcp,tool_call	mcp_tool_call
+base.apk	classes7.dex	mcp,tool_result	mcp_tool_result
+base.apk	classes7.dex	requiresLocalExecutor	requiresLocalExecutor
+base.apk	classes7.dex	tool_result	call_tool_result
+base.apk	classes8.dex	deviceexecutor	Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;
+base.apk	classes8.dex	mcp	/backend-api/ecosystem/call_mcp
+base.apk	classes8.dex	mcp	/backend-api/ps/mcp
+base.apk	classes8.dex	tool_call	tool_call
+base.apk	classes9.dex	mcp	Closing MCP server
+base.apk	classes9.dex	mcp	Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+base.apk	classes9.dex	mcp	McpProtocol
+base.apk	classes9.dex	mcp	RMCP provider disconnected
+base.apk	classes9.dex	mcp	onFatalExceptionFromCPP
+base.apk	classes9.dex	tool_result	TOOL_RESULT
+base.apk	classes9.dex	tool_result	tool_result
+base.apk	classes9.dex	tools/call	tools/call
+base.apk	classes9.dex	tools/list	notifications/tools/list_changed
+base.apk	classes9.dex	tools/list	tools/list

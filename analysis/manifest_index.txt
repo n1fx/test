@@ -1,1 +1,4 @@
-
+base.manifest.xml
+split_config.arm64_v8a.manifest.xml
+split_config.ja.manifest.xml
+split_config.xxhdpi.manifest.xml

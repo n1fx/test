@@ -1,1 +1,547 @@
 
+### base.apk classes1.dex Lvzc0;-><clinit>()V
+  const-string v1, "3980115485"
+
+### base.apk classes1.dex Lqhm;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v0, "Whether to include truncated command output, reasoning content, and file diffs. MCP and dynamic-tool result payloads remain omitted."
+
+### base.apk classes1.dex Lc4s;-><clinit>()V
+  const-string v2, "https://platform.openai.com/docs/mcp#risks-and-safety"
+
+### base.apk classes1.dex Lbq10;-><clinit>()V
+  const-string v0, "mcp://komi"
+  const-string v1, "mcp://kakao"
+
+### base.apk classes1.dex Lwfz;->b(Ll2t;)Ljava/lang/Object;
+  instance-of v0, v7, Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;
+  new-instance v0, Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;
+  invoke-direct v0, v1, Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;-><init>(I)V
+
+### base.apk classes1.dex Lwfz;->c(Ll2t;)Ljava/lang/Object;
+  new-instance v9, Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;
+  invoke-direct v9, v0, v2, Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;-><init>(I I)V
+  new-instance v9, Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;
+  invoke-direct v9, v3, v2, Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;-><init>(I I)V
+  new-instance v9, Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;
+  invoke-direct v9, v3, v2, Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;-><init>(I I)V
+
+### base.apk classes1.dex Lxfz;-><clinit>()V
+  const-string v2, "use_handle_rmcp"
+
+### base.apk classes1.dex Lbc30;->b(Ljava/lang/String; Lrol0; Ll2t;)Ljava/lang/Object;
+  const-string v14, "rmcp"
+  const-string v11, "Invalid signed RMCP provider offer"
+  const-string v11, "RMCP registration binding mismatch"
+
+### base.apk classes3.dex La0g0;-><init>(Lur; Ljava/util/Map; Lg681;)V
+  const-string v1, "LocalFunctionExecutorImpl"
+
+### base.apk classes3.dex Lfwa1;->d0(Lxr3;)Lhhi0;
+  const-string v1, "type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction"
+
+### base.apk classes3.dex Lfwa1;->e0(Lhhi0;)Lu6f1;
+  const-string v1, "type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction"
+
+### base.apk classes3.dex Lfwa1;->y(Ljava/lang/String; Ljava/lang/String;)Lhhi0;
+  const-string v0, "type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction"
+
+### base.apk classes3.dex Lhf71;->P(Lmo80; Ljava/lang/String; Ljava/lang/String; Lkotlinx/serialization/json/c; Lnqx0; Lkotlin/jvm/functions/Function0;)Lmo80;
+  const-string v3, "item/mcpToolCall/progress"
+
+### base.apk classes3.dex Lhxx0;->h(Ljava/lang/String; Z Lho80; Z Ll2t;)Ljava/lang/Object;
+  const-string v10, "mcpServerOpenaiFormElicitation"
+
+### base.apk classes3.dex Llt;->invoke()Ljava/lang/Object;
+  const-string v2, "686lQhd7kGqR8F2BTZNa0MCpbpQuNsmhT7vyRHy9apU="
+
+### base.apk classes3.dex Lsfn0;->a(Loen0; Ll2t;)Ljava/lang/Object;
+  invoke-virtual v4, Lpcp0;->c()Lmcp0;
+  sget-object v1, Lmcp0;->b Lmcp0;
+
+### base.apk classes3.dex Lugf;->g(Lhjm; Lgjm; Ll2t;)Ljava/lang/Object;
+  const-string v7, "This app tool is no longer available through dynamic tools. Use the codex_app MCP server. If that server is unavailable on this host, task delegation is unavailable."
+
+### base.apk classes3.dex Lx03;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  iget-object v3, v2, Lpcp0;->b Lmcp0;
+
+### base.apk classes3.dex Lyt70;-><clinit>()V
+  const v6, -398014527
+
+### base.apk classes4.dex La830;-><init>(Ljava/lang/String; Lu730; Lu730;)V
+  const-string v0, "file:///android-executor"
+  const-string v0, "file:///android-executor/device-executor"
+
+### base.apk classes4.dex Lb940;->C(Lzc30; Lvh00;)Ljava/lang/Object;
+  const-string v1, "mcp_servers"
+
+### base.apk classes4.dex Lb940;->w(Lkotlinx/serialization/json/b; Lz830; Ll2t;)Ljava/lang/Object;
+  const-string v3, "http://127.0.0.1:39801/android-executor/mcp"
+
+### base.apk classes4.dex Lfwr0;->b(Lkotlinx/serialization/json/c; Lrol0; Ll2t;)Ljava/lang/Object;
+  const-string v7, "Mcp-Session-Id"
+
+### base.apk classes4.dex Lfwr0;->c(Ljava/lang/String; Ljava/util/List; Lrol0; Lkotlin/jvm/functions/Function2; Lkotlin/jvm/functions/Function0; Ll2t;)Ljava/lang/Object;
+  const-string v10, "Mcp-Session-Id"
+
+### base.apk classes4.dex Lgai1;->k(Ljava/lang/String;)Lvul;
+  const-string v3, "item/mcpToolCall/progress"
+
+### base.apk classes4.dex Lhhi1;->k(Lpom;)Z
+  const-string v3, "mcp_tool_execution_error"
+
+### base.apk classes4.dex Li830;->serialize(Lkotlinx/serialization/encoding/Encoder; Ljava/lang/Object;)V
+  const-string v6, "file:///android-executor"
+
+### base.apk classes4.dex Lis9;->invoke(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v1, "CodexRemoteMcpServerElicitationParam"
+
+### base.apk classes4.dex Lkb30;->toString()Ljava/lang/String;
+  const-string v0, "ExecutorRegistrationId(value="
+
+### base.apk classes4.dex Lmkh1;->p(Ln2d;)Lkotlinx/serialization/json/c;
+  const-string v2, "mcpServer/elicitation/request"
+  const-string v2, "mcp_tool_call"
+
+### base.apk classes4.dex Lob30;-><clinit>()V
+  const-string v0, "executorRegistrationId"
+
+### base.apk classes4.dex Lq830;-><init>()V
+  const-string v2, "file:///android-executor"
+
+### base.apk classes4.dex Lq830;-><init>(I Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Lp830; Ljava/lang/String; Ll830;)V
+  const-string v1, "file:///android-executor"
+
+### base.apk classes4.dex Lr730;-><init>()V
+  const-string v0, "file:///android-executor/device-executor"
+  const-string v0, "[mcp_servers.android_native]
+url = "http://127.0.0.1:39801/android-executor/mcp"
+"
+
+### base.apk classes4.dex Lrb30;-><clinit>()V
+  const-string v0, "executorRegistrationId"
+
+### base.apk classes4.dex Ls5f0;->t(Lool0; Ljava/lang/String; Ljava/lang/String; Lr0z0; Lq0v0; Ljava/security/SecureRandom; Lqq70; Ll2t;)Ljava/lang/Object;
+  const-string v12, "RMCP handshake grant rejected"
+
+### base.apk classes4.dex Lu4x0;-><clinit>()V
+  const-string v4, "MCP"
+
+### base.apk classes4.dex Lwqi1;->m(Ljava/lang/String; Lkotlinx/serialization/json/b; Z)Le141;
+  const-string v6, "tool_result"
+
+### base.apk classes4.dex Lxcd;->emit(Ljava/lang/Object; Lj2t;)Ljava/lang/Object;
+  const-string v0, "setMcpModelContext"
+
+### base.apk classes4.dex Ly8i1;->j(Z Ltv0; Licr0; Ll6a; Ljava/lang/String; Ljava/util/List; Z Luwa0; Luwa0; Lh7a; Lkotlin/jvm/functions/Function0; Lejq; Lkotlin/jvm/functions/Function1; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function1; I F F Z Lmeu0; Lqvq; I I I)V
+  const v2, 873980175
+
+### base.apk classes5.dex La70;->invoke(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  const v0, -103398019
+
+### base.apk classes5.dex Lg2d;->serialize(Lkotlinx/serialization/encoding/Encoder; Ljava/lang/Object;)V
+  const-string v9, "mcpServer/elicitation/request"
+
+### base.apk classes5.dex Li2d;-><init>(I Lw2d; Ljava/lang/String; Ljava/lang/String; Lkotlinx/serialization/json/c; Ljava/lang/String; Ljava/lang/String; Lv8f;)V
+  const-string v5, "mcpServer/elicitation/request"
+
+### base.apk classes5.dex Lk5l0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v3, "ps/mcp"
+  const-string v2, "tools/call"
+
+### base.apk classes5.dex Llt30;->a()Lokm;
+  const-string v4, "mcp"
+
+### base.apk classes5.dex Lo00;->invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v1, "CodexRemoteMcpServerElicitationParam"
+
+### base.apk classes5.dex Lq4h1;->f(Li2d;)Lton0;
+  const-string v4, "mcpServer/elicitation/request"
+
+### base.apk classes5.dex Lv71;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v2, "/ps/mcp"
+  const-string v2, "tools/call"
+
+### base.apk classes5.dex Lwji1;->j(Ljava/lang/String;)Ll2t0;
+  const-string v1, "mcp-resource://codex_apps/"
+
+### base.apk classes5.dex Lyji1;->o(Ljava/util/List; Lzmp;)Ljava/util/List;
+  const-string v13, "call_tool_result"
+
+### base.apk classes5.dex Lyu;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v1, "ps/mcp"
+  const-string v3, "mcp/skill"
+
+### base.apk classes6.dex Lanf0;->S(Ll2t;)Ljava/lang/Object;
+  const-string v0, "mcpServer/elicitation/request"
+
+### base.apk classes6.dex Laui0;->p(Lqn4;)Lqg81;
+  const-string v3, "tool_call_safety_summary"
+
+### base.apk classes6.dex Lb2t0;->G(Lwaf0;)V
+  const-string v5, "](mcp-resource://codex_apps/"
+
+### base.apk classes6.dex Lbcn;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  new-instance v5, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+  invoke-direct/range v5 ... v10, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;-><init>(I Ljava/lang/String; Lkotlinx/serialization/json/b; Lkotlinx/serialization/SerializationException; I)V
+
+### base.apk classes6.dex Lcze;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  new-instance v0, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+  invoke-direct/range v0 ... v5, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;-><init>(I Ljava/lang/String; Lkotlinx/serialization/json/b; Lkotlinx/serialization/SerializationException; I)V
+
+### base.apk classes6.dex Lf5t0;-><clinit>()V
+  const-string v0, "mcp_request_meta"
+
+### base.apk classes6.dex Lff;->x(Ljava/lang/String; Lkotlinx/serialization/json/b; Z)Lt2n;
+  const-string v6, "mcp_tool_call"
+
+### base.apk classes6.dex Lgx20;-><clinit>()V
+  const-string v2, "eUYXnyRncMTgVImrrQnRt2MCp7_1kmpplpuMRAP_Mv0="
+
+### base.apk classes6.dex Lhyn;->a(Lkotlinx/serialization/json/b;)Lyiy;
+  const-string v1, "mcpToolCall"
+
+### base.apk classes6.dex Lixn;-><clinit>()V
+  const-string v0, "mcpAppResourceUri"
+
+### base.apk classes6.dex Ll2t0;->a()Ljava/lang/String;
+  const-string v4, "mcp-resource://codex_apps/"
+
+### base.apk classes6.dex Llfm;->s(Lrfm; Lggm; Lj2t;)Ljava/lang/Object;
+  const-string v7, "mcpToolCall"
+
+### base.apk classes6.dex Lmcp;->serializer()Lkotlinx/serialization/KSerializer;
+
+### base.apk classes6.dex Lmix0;-><clinit>()V
+  const-string v0, "disableMcp"
+
+### base.apk classes6.dex Ln1d;->a(Lw84;)Lf1d;
+  const-string v7, "call_tool_result"
+
+### base.apk classes6.dex Lncp;-><clinit>()V
+  new-instance v0, Lmcp;
+  sput-object v0, Lncp;->Companion Lmcp;
+
+### base.apk classes6.dex Lnoo;->c(Lpom;)Ljava/util/List;
+  const-string v1, "mcp__codex_app__"
+
+### base.apk classes6.dex Lnvl;->invoke()Ljava/lang/Object;
+  sget-object v3, Lncp;->Companion Lmcp;
+  invoke-virtual v3, Lmcp;->serializer()Lkotlinx/serialization/KSerializer;
+
+### base.apk classes6.dex Lnwl;->h(Ljava/lang/String; Ljava/lang/Long; Lewl;)Ljava/lang/Object;
+  const-string v7, "mcpServer/elicitation/request"
+
+### base.apk classes6.dex Lnxi0;-><clinit>()V
+  const-string v0, "mcpAppModelContexts"
+
+### base.apk classes6.dex Lo35;-><clinit>()V
+  const-string v0, "codexMcpElicitation"
+
+### base.apk classes6.dex Lo5t0;->a(Ll4t0; Ll2t;)Ljava/lang/Object;
+  const-string v1, "tools/list"
+
+### base.apk classes6.dex Lo5t0;->b(Lf4t0; Ll2t;)Ljava/lang/Object;
+  const-string v1, "tools/call"
+
+### base.apk classes6.dex Lo5t0;->c(Lf4t0; Lh7t0; Ll2t;)Ljava/lang/Object;
+  const-string v1, "tools/call"
+
+### base.apk classes6.dex Log81;-><clinit>()V
+  const-string v0, "codexMcpElicitationResponse"
+
+### base.apk classes6.dex Lon4;-><clinit>()V
+  const-string v0, "codexMcpElicitationResponse"
+  const-string v0, "mcpAppModelContexts"
+
+### base.apk classes6.dex Lowl;->a(Lmcn; Ljava/lang/String; Ljava/lang/Long;)Lm8h0;
+  const-string v6, "McpServerElicitation"
+
+### base.apk classes6.dex Lox31;->b()Lp8m;
+  const-string v1, "mcp/skill"
+
+### base.apk classes6.dex Lpnd;->b(Lw84;)Labt0;
+  const-string v2, "call_tool_result"
+
+### base.apk classes6.dex Lpnd;->e(Lw84; Labt0;)Ljava/util/ArrayList;
+  const-string v1, "call_tool_result"
+
+### base.apk classes6.dex Lqfl;->invoke()Ljava/lang/Object;
+  const-string v1, "protobuf_analytics_events.v1.CodexMcpExtensionAction"
+
+### base.apk classes6.dex Lqfn;->invoke()Ljava/lang/Object;
+  const-string v6, "tool_result"
+
+### base.apk classes6.dex Lqus0;-><init>(Lgjb0; Ljava/lang/String; Ljava/lang/String; Levr; Lbjs0; Ljava/lang/String; Lv7t0; Z I I)V
+  const-string v19, "https://platform.openai.com/docs/mcp#risks-and-safety"
+
+### base.apk classes6.dex Lr61;->invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v2, "call_tool_result"
+
+### base.apk classes6.dex Lsdf;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  new-instance v0, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+  invoke-direct/range v0 ... v5, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;-><init>(I Ljava/lang/String; Lkotlinx/serialization/json/b; Lkotlinx/serialization/SerializationException; I)V
+
+### base.apk classes6.dex Lu5p;-><clinit>()V
+  const-string v3, "mcp_servers.codex_app"
+
+### base.apk classes6.dex Lwsm;-><clinit>()V
+  const-string v0, "mcpServerOpenaiFormElicitation"
+
+### base.apk classes6.dex Lxz;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  new-instance v9, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+  invoke-direct/range v9 ... v14, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;-><init>(I Ljava/lang/String; Lkotlinx/serialization/json/b; Lkotlinx/serialization/SerializationException; I)V
+
+### base.apk classes6.dex Lyfz;-><clinit>()V
+  const-string v0, "DeviceExecutor"
+
+### base.apk classes7.dex Lazn0;-><init>(I Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Lw2d; Ljava/lang/String;)V
+  const-string v4, "mcpServer/elicitation/request"
+
+### base.apk classes7.dex Lc0z0;-><init>(Lwqv; Lkotlin/jvm/functions/Function2; Lkotlin/jvm/functions/Function2;)V
+  const-string v5, "onFrame(Lcom/openai/feature/deviceexecutor/impl/RmcpHttp2Server$Frame;)V"
+
+### base.apk classes7.dex Lc2n;->invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v13, "CodexRemoteMcpServerElicitationRequestCard"
+
+### base.apk classes7.dex Ld2n;->invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v10, "CodexRemoteMcpServerElicitationSheetContent"
+
+### base.apk classes7.dex Lefp0;->c(Lkotlinx/serialization/json/c; Lkotlinx/serialization/json/c; Z)Lkp10;
+  const-string v4, "call_tool_result"
+  const-string v4, "mcp_tool_result"
+
+### base.apk classes7.dex Lezn0;->serialize(Lkotlinx/serialization/encoding/Encoder; Ljava/lang/Object;)V
+  const-string v9, "mcpServer/elicitation/request"
+
+### base.apk classes7.dex Lgh5;-><clinit>()V
+  const-string v0, "requiresLocalExecutor"
+
+### base.apk classes7.dex Lgzn0;-><init>(I Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Lw2d; Lxyn0; Ljava/lang/String; Ldzn0;)V
+  const-string v5, "mcpServer/elicitation/request"
+
+### base.apk classes7.dex Lh241;->b(Lcom/openai/feature/messages/impl/listitem/content/tools/b; Lkotlin/jvm/functions/Function1; Le641; Ljava/lang/String; Lkotlin/jvm/functions/Function1; Ljava/lang/String; Ljava/lang/String; Lp241; Z Z Lirg; Ljava/lang/String; Lkotlinx/serialization/json/b; Lkotlinx/serialization/json/c; Z Z Ly8z; Lkotlin/jvm/functions/Function1; Ljava/lang/String; Lqvq; I I)V
+  const-string v31, "sendMcpMessage"
+
+### base.apk classes7.dex Li00;->J(Lrfm; Lggm; Ll2t;)Ljava/lang/Object;
+  const-string v1, "mcpToolCall"
+
+### base.apk classes7.dex Li1o0;->N(Li2d;)Luyn0;
+  const-string v6, "mcpServer/elicitation/request"
+  const-string v8, "mcp_tool_call"
+
+### base.apk classes7.dex Ljii1;->f(Ljava/lang/String; Ljava/lang/String; Lyuj0; Lqvq; I)V
+  const-string v10, "CodexRemoteMcpServerElicitationParam"
+
+### base.apk classes7.dex Ljii1;->g(Lt2n; Lkotlin/jvm/functions/Function1; Z J Lyuj0; Lqvq; I)V
+  const-string v12, "CodexRemoteMcpServerElicitationPromptContent"
+
+### base.apk classes7.dex Ljii1;->h(Lt2n; Lk2n; Lkotlin/jvm/functions/Function1; Lyuj0; Ljava/util/Set; Z J Lqvq; I I)V
+  const-string v13, "CodexRemoteMcpServerElicitationRequestCard"
+
+### base.apk classes7.dex Ljii1;->i(Lt2n; Lk2n; Lkotlin/jvm/functions/Function1; Lyuj0; Ljava/util/Set; Z Ljava/lang/String; J Lkotlin/jvm/functions/Function6; Lqvq; I I)V
+  const-string v1, "CodexRemoteMcpServerElicitationSheetContent"
+
+### base.apk classes7.dex Ljii1;->j(Lt2n; Ljava/lang/String; Lkotlin/jvm/functions/Function1; Z J Lyuj0; Lqvq; I)V
+  const-string v7, "CodexRemoteMcpServerElicitationUrlParam"
+
+### base.apk classes7.dex Lkcp0;-><clinit>()V
+  const-class v3, Lmcp0;
+
+### base.apk classes7.dex Lkcp0;->get(Ljava/lang/Object;)Ljava/lang/Object;
+  check-cast v1, Lmcp0;
+  iget-object v0, v1, Lmcp0;->a Ljava/lang/String;
+
+### base.apk classes7.dex Lknx0;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v1, "mcp"
+
+### base.apk classes7.dex Llcp0;-><clinit>()V
+  sget-object v1, Lmcp0;->d Lyv20;
+
+### base.apk classes7.dex Llqc0;->b(Lbqg0; Lkotlin/jvm/functions/Function1; Leb8; Lyuj0; Z Lkotlin/jvm/functions/Function1; Z Z Lqvq; I)V
+  const v13, -398018122
+
+### base.apk classes7.dex Lm8o0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v6, "mcpServer/elicitation/request"
+
+### base.apk classes7.dex Lmcp0;-><clinit>()V
+  new-instance v0, Lmcp0;
+  invoke-direct v0, v3, v1, v2, Lmcp0;-><init>(Ljava/lang/String; I Ljava/lang/String;)V
+  new-instance v1, Lmcp0;
+  invoke-direct v1, v4, v2, v3, Lmcp0;-><init>(Ljava/lang/String; I Ljava/lang/String;)V
+  sput-object v1, Lmcp0;->b Lmcp0;
+  new-instance v2, Lmcp0;
+  invoke-direct v2, v5, v3, v4, Lmcp0;-><init>(Ljava/lang/String; I Ljava/lang/String;)V
+  new-instance v3, Lmcp0;
+  invoke-direct v3, v6, v4, v5, Lmcp0;-><init>(Ljava/lang/String; I Ljava/lang/String;)V
+  new-instance v4, Lmcp0;
+  invoke-direct v4, v7, v5, v6, Lmcp0;-><init>(Ljava/lang/String; I Ljava/lang/String;)V
+  sput-object v4, Lmcp0;->Unknown Lmcp0;
+  filled-new-array v0, v1, v2, v3, v4, [Lmcp0;
+  sput-object v0, Lmcp0;->c [Lmcp0;
+  sput-object v1, Lmcp0;->d Lyv20;
+  sput-object v0, Lmcp0;->Companion Ljcp0;
+
+### base.apk classes7.dex Lmcp0;-><init>(Ljava/lang/String; I Ljava/lang/String;)V
+  iput-object v3, v0, Lmcp0;->a Ljava/lang/String;
+
+### base.apk classes7.dex Lmcp0;->valueOf(Ljava/lang/String;)Lmcp0;
+  const-class v0, Lmcp0;
+  check-cast v1, Lmcp0;
+
+### base.apk classes7.dex Lmcp0;->values()[Lmcp0;
+  sget-object v0, Lmcp0;->c [Lmcp0;
+  check-cast v0, [Lmcp0;
+
+### base.apk classes7.dex Lmii0;->invoke()Ljava/lang/Object;
+  new-instance v9, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+  invoke-direct/range v9 ... v14, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;-><init>(I Ljava/lang/String; Lkotlinx/serialization/json/b; Lkotlinx/serialization/SerializationException; I)V
+
+### base.apk classes7.dex Lncp0;->deserialize(Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+  check-cast v8, Lmcp0;
+  invoke-direct/range v5 ... v12, Lpcp0;-><init>(I Ljava/lang/String; Lmcp0; Ljava/lang/String; J Ljava/lang/String;)V
+
+### base.apk classes7.dex Lncp0;->serialize(Lkotlinx/serialization/encoding/Encoder; Ljava/lang/Object;)V
+  iget-object v3, v7, Lpcp0;->b Lmcp0;
+
+### base.apk classes7.dex Lo2y0;->invoke()Ljava/lang/Object;
+  const-string v6, "
+        |Tool registration will proceed, but this may cause compatibility issues.
+        |Consider updating the tool name to conform to the MCP tool naming standard.
+        |See SEP-986: https://github.com/modelcontextprotocol/modelcontextprotocol/issues/986
+        "
+
+### base.apk classes7.dex Lo541;-><clinit>()V
+  const-string v0, "mcpModelContext"
+  const-string v0, "mcpAppCapabilities"
+
+### base.apk classes7.dex Lpcp0;-><init>(I Ljava/lang/String; Lmcp0; Ljava/lang/String; J Ljava/lang/String;)V
+  iput-object v6, v3, Lpcp0;->b Lmcp0;
+
+### base.apk classes7.dex Lpcp0;->c()Lmcp0;
+  iget-object v0, v0, Lpcp0;->b Lmcp0;
+
+### base.apk classes7.dex Lpcp0;->equals(Ljava/lang/Object;)Z
+  iget-object v1, v7, Lpcp0;->b Lmcp0;
+  iget-object v3, v8, Lpcp0;->b Lmcp0;
+
+### base.apk classes7.dex Lpcp0;->hashCode()I
+  iget-object v2, v5, Lpcp0;->b Lmcp0;
+
+### base.apk classes7.dex Lpf5;-><clinit>()V
+  const-string v0, "requiresLocalExecutor"
+
+### base.apk classes7.dex Lqzs0;-><init>(Lm0t0; Ljava/lang/String; Ly8z;)V
+  const-string v5, "updateMcpModelContext"
+
+### base.apk classes7.dex Ls141;->G(Leub0;)V
+  const-string v5, "mcp_app"
+
+### base.apk classes7.dex Ls1n;->invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v2, "CodexRemoteMcpServerElicitationRequestCard"
+
+### base.apk classes7.dex Lsti0;->N(Ljava/lang/String; Lkotlinx/serialization/json/c; Z)Lu671;
+  const-string v2, "mcpToolCall"
+  const-string v3, "mcpAppResourceUri"
+
+### base.apk classes7.dex Lsti0;->x(Ljava/util/List; Ljava/lang/String; Lkotlinx/serialization/json/c; Ljava/lang/String;)Ljava/util/List;
+  const-string v7, "item/mcpToolCall/progress"
+
+### base.apk classes7.dex Lv710;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v4, "ps/mcp"
+
+### base.apk classes7.dex Lveh1;->i(Lkotlinx/serialization/json/c;)Lj7y0;
+  const-string v6, "mcp_tool_call"
+
+### base.apk classes7.dex Lveh1;->t(Lkotlinx/serialization/json/b; Ljava/lang/String; Lkotlinx/serialization/json/c; Ljava/util/List;)Lsmx0;
+  const-string v3, "mcpServer/elicitation/request"
+
+### base.apk classes7.dex Lvji1;->e(Ljava/lang/String;)Ljava/util/List;
+  const-string v0, "mcp-resource://codex_apps/"
+
+### base.apk classes7.dex Lxb30;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v11, "rmcp"
+
+### base.apk classes7.dex Lxe60;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v4, "ps/mcp"
+
+### base.apk classes7.dex Lyyn0;->serialize(Lkotlinx/serialization/encoding/Encoder; Ljava/lang/Object;)V
+  const-string v7, "mcpServer/elicitation/request"
+
+### base.apk classes8.dex Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;-><init>(I)V
+
+### base.apk classes8.dex Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;-><init>(I I)V
+  invoke-direct v0, v1, Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;-><init>(I)V
+
+### base.apk classes8.dex Lct51;->invoke()Ljava/lang/Object;
+  const-string v10, "tool_call"
+
+### base.apk classes8.dex Li181;->invoke()Ljava/lang/Object;
+  const-string v1, "tool_call"
+
+### base.apk classes8.dex Lki8;->b(Lcom/openai/valdi/oai/platform/OAIAPIRequest;)Z
+  const-string v0, "/backend-api/ecosystem/call_mcp"
+  const-string v1, "/backend-api/ps/mcp"
+
+### base.apk classes8.dex Lyui1;->a(Liml0; Lky11; Lkotlin/jvm/functions/Function0; Lyuj0; Lqvq; I)V
+  const v1, -1398010221
+
+### base.apk classes9.dex Lcom/snap/valdi/exceptions/GlobalExceptionHandler$Companion;->onFatalExceptionFromCPP(Ljava/lang/Throwable; Ljava/lang/String;)Ljava/lang/String;
+
+### base.apk classes9.dex Lcom/snap/valdi/exceptions/GlobalExceptionHandler;->onFatalExceptionFromCPP(Ljava/lang/Throwable; Ljava/lang/String;)Ljava/lang/String;
+  invoke-virtual v0, v1, v2, Lcom/snap/valdi/exceptions/GlobalExceptionHandler$Companion;->onFatalExceptionFromCPP(Ljava/lang/Throwable; Ljava/lang/String;)Ljava/lang/String;
+
+### base.apk classes9.dex Lkhv0;->b(Lef11; Lv930; Ll2t;)Ljava/lang/Object;
+  const-string v14, "McpProtocol"
+
+### base.apk classes9.dex Lkhv0;->f(Lg5c0; Lu4c0;)V
+  sget v0, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;->c I
+  new-instance v1, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+  invoke-direct/range v1 ... v6, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;-><init>(I Ljava/lang/String; Lkotlinx/serialization/json/b; Lkotlinx/serialization/SerializationException; I)V
+
+### base.apk classes9.dex Lkhv0;->h(Lv930; Ld5c0; Ljava/lang/Throwable; Ll2t;)Ljava/lang/Object;
+  instance-of v5, v8, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+  check-cast v9, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+  iget v9, v9, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;->a I
+  check-cast v8, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
+  iget-object v8, v8, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;->b Lkotlinx/serialization/json/b;
+
+### base.apk classes9.dex Lio/modelcontextprotocol/kotlin/sdk/types/McpException;-><init>(I Ljava/lang/String; Lkotlinx/serialization/json/b; Lkotlinx/serialization/SerializationException; I)V
+  iput v3, v2, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;->a I
+  iput-object v5, v2, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;->b Lkotlinx/serialization/json/b;
+
+### base.apk classes9.dex Lio/modelcontextprotocol/kotlin/sdk/types/UrlElicitationRequiredException;-><init>(Ljava/util/List; Ljava/lang/String;)V
+  invoke-direct/range v3 ... v8, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;-><init>(I Ljava/lang/String; Lkotlinx/serialization/json/b; Lkotlinx/serialization/SerializationException; I)V
+
+### base.apk classes9.dex Lqwx;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v0, "RMCP provider disconnected"
+
+### base.apk classes9.dex Lr8j0;-><clinit>()V
+  const-string v3, "notifications/tools/list_changed"
+  const-string v3, "tools/list"
+  const-string v3, "tools/call"
+
+### base.apk classes9.dex Lsd11;->invoke()Ljava/lang/Object;
+  const-string v0, "Closing MCP server"
+
+### base.apk classes9.dex Lu0t;-><clinit>()V
+  const-string v8, "TOOL_RESULT"
+
+### base.apk classes9.dex Lzjz0;->a(Lkotlinx/serialization/json/b;)Lyiy;
+  const-string v1, "tool_result"
+
+### base.apk classes10.dex Lkal;->serialize(Lkotlinx/serialization/encoding/Encoder; Ljava/lang/Object;)V
+  const-string v0, "CODEX_CHATGPT_HANDOFF_LIFECYCLE_ACTION_TOOL_CALLED"
+
+### base.apk classes10.dex Lpfl;-><clinit>()V
+  const-string v5, "type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction"
+
+### base.apk classes10.dex Lpfl;->toString()Ljava/lang/String;
+  const-string v2, "CodexMcpExtensionAction{"
+
+### base.apk classes10.dex Lprotobuf_analytics_events/v1/CodexChatgptHandoffLifecycleAction;-><clinit>()V
+  const-string v2, "CODEX_CHATGPT_HANDOFF_LIFECYCLE_ACTION_TOOL_CALLED"
+
+### base.apk classes10.dex Ls18;->d(Ljava/lang/String; Lrol0; Lyzy0; Ll2t;)Ljava/lang/Object;
+  const-string v2, "/mcp"
+  const-string v14, "x-codex-rmcp-grant"
+  const-string v8, "mcp-"

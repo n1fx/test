@@ -3,13 +3,9 @@ ZIP SHA-256: 513131d742a8e724a1efbb030497390cdfe60234af468bfd2b3de08c6f10f6a5
 APK files:
 
 work/extracted/ChatGPT_APK/base.apk (102101663 bytes)
-ANALYSIS ERROR for base.apk: AttributeError: 'lxml.etree._Element' object has no attribute 'toprettyxml'
 
 work/extracted/ChatGPT_APK/split_config.arm64_v8a.apk (21075081 bytes)
-ANALYSIS ERROR for split_config.arm64_v8a.apk: AttributeError: 'lxml.etree._Element' object has no attribute 'toprettyxml'
 
 work/extracted/ChatGPT_APK/split_config.ja.apk (876754 bytes)
-ANALYSIS ERROR for split_config.ja.apk: AttributeError: 'lxml.etree._Element' object has no attribute 'toprettyxml'
 
 work/extracted/ChatGPT_APK/split_config.xxhdpi.apk (464644 bytes)
-ANALYSIS ERROR for split_config.xxhdpi.apk: AttributeError: 'lxml.etree._Element' object has no attribute 'toprettyxml'
