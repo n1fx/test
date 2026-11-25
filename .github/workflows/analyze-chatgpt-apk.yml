@@ -1,5 +1,9 @@
 name: Analyze ChatGPT APK release
 on:
+  push:
+    branches: [apk-analysis-20261126]
+    paths:
+      - ".github/workflows/analyze-chatgpt-apk.yml"
   workflow_dispatch:
 permissions:
   contents: write
