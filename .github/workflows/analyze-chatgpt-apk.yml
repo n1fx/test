@@ -4,6 +4,7 @@ on:
     branches: [apk-analysis-20261126]
     paths:
       - ".github/workflows/analyze-chatgpt-apk.yml"
+      - "tools/analyze_chatgpt_apk.py"
   workflow_dispatch:
 permissions:
   contents: write
