@@ -37,6 +37,7 @@ def main():
     method_lines = []
     disassembly = []
     full_target_methods = []
+    selected_class_dump = []
     for apk_path in apk_paths:
         inventory.append(f"\n{apk_path} ({apk_path.stat().st_size} bytes)")
         try:
@@ -55,6 +56,14 @@ def main():
                 for value, tags in hits:
                     dex_lines.append(f"{apk_path.name}\tclasses{dex_index+1}.dex\t{','.join(tags)}\t{value}")
                 for cls in dex.get_classes():
+                    clsdesc = cls.get_name()
+                    if any(x.lower() in clsdesc.lower() for x in ("Lfwr0;", "Lb940;", "RmcpHttp2Server", "ExecutorEnrollment", "LocalFunctionExecutorImpl")):
+                        selected_class_dump.append(f"\n### CLASS {apk_path.name} classes{dex_index+1}.dex {clsdesc}")
+                        for cm in cls.get_methods():
+                            selected_class_dump.append(f"\n## METHOD {cm.get_class_name()}->{cm.get_name()}{cm.get_descriptor()}")
+                            ccode = cm.get_code()
+                            if ccode is not None:
+                                selected_class_dump.extend(f"  {i.get_name()} {i.get_output()}" for i in ccode.get_bc().get_instructions())
                     for method in cls.get_methods():
                         code = method.get_code()
                         if code is None:
