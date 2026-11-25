@@ -36,6 +36,7 @@ def main():
     dex_lines = []
     method_lines = []
     disassembly = []
+    full_target_methods = []
     for apk_path in apk_paths:
         inventory.append(f"\n{apk_path} ({apk_path.stat().st_size} bytes)")
         try:
@@ -71,6 +72,10 @@ def main():
                             disassembly.append(f"\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")
                             for op, output in matching:
                                 disassembly.append(f"  {op} {output}")
+                        target_tokens = ("39801", "android-executor", "RmcpHttp2Server", "Mcp-Session-Id", "executorRegistrationId", "LocalFunctionExecutorImpl", "DeviceExecutor", "requiresLocalExecutor")
+                        if any(t.lower() in descriptor.lower() for t in target_tokens) or any(t.lower() in ins.get_output().lower() for t in target_tokens for ins in insns):
+                            full_target_methods.append(f"\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")
+                            full_target_methods.extend(f"  {ins.get_name()} {ins.get_output()}" for ins in insns)
         except Exception as exc:
             inventory.append(f"ANALYSIS ERROR for {apk_path.name}: {type(exc).__name__}: {exc}")
     write("apk_inventory.txt", "\n".join(inventory) + "\n")
@@ -78,6 +83,7 @@ def main():
     write("mcp_executor_strings.txt", "\n".join(sorted(set(dex_lines))) + "\n")
     write("mcp_executor_methods_index.txt", "\n".join(sorted(set(method_lines))) + "\n")
     write("mcp_executor_methods_disassembly.txt", "\n".join(disassembly) + "\n")
+    write("target_method_full.txt", "\n".join(full_target_methods) + "\n")
     print(f"Inspected {len(apk_paths)} APK(s); string hits={len(dex_lines)}; methods={len(method_lines)}")
 
 if __name__ == "__main__":
