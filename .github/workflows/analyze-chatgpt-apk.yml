@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/analyze-chatgpt-apk.yml"
       - "tools/analyze_chatgpt_apk.py"
+      - "analysis/RMCP_followup_20261126.md"
   workflow_dispatch:
 permissions:
   contents: write
