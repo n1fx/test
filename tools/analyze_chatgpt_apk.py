@@ -13,7 +13,9 @@ NEEDLES = (
     "Mcp-Session-Id", "tools/list", "tools/call",
     "RmcpHttp2Server", "requiresLocalExecutor", "executorRegistrationId",
     "use_handle_rmcp", "x-codex-rmcp-grant", "RMCP provider disconnected",
-    "noise_hybrid_ik_v1", "RMCP handshake grant rejected", "Missing Noise handshake",\n    "HTTP/2 connection closed", "RMCP provider disconnected", "RmcpHttp2Server$Frame",\n    "x-codex-rmcp-grant", "handshake grant", "noise", "rmcp server",
+    "noise_hybrid_ik_v1", "RMCP handshake grant rejected", "Missing Noise handshake",
+    "HTTP/2 connection closed", "RMCP provider disconnected", "RmcpHttp2Server$Frame",
+    "x-codex-rmcp-grant", "handshake grant", "noise", "rmcp server",
 )
 
 def write(name, data):
