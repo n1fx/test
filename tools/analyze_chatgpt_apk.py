@@ -13,7 +13,7 @@ NEEDLES = (
     "Mcp-Session-Id", "tools/list", "tools/call",
     "RmcpHttp2Server", "requiresLocalExecutor", "executorRegistrationId",
     "use_handle_rmcp", "x-codex-rmcp-grant", "RMCP provider disconnected",
-    "noise_hybrid_ik_v1", "RMCP handshake grant rejected", "Missing Noise handshake",
+    "noise_hybrid_ik_v1", "RMCP handshake grant rejected", "Missing Noise handshake",\n    "HTTP/2 connection closed", "RMCP provider disconnected", "RmcpHttp2Server$Frame",\n    "x-codex-rmcp-grant", "handshake grant", "noise", "rmcp server",
 )
 
 def write(name, data):
@@ -60,7 +60,7 @@ def main():
                 for cls in dex.get_classes():
                     clsdesc = cls.get_name()
                     rmcp_class_names = ("Lfwr0;", "Lb940;", "RmcpHttp2Server", "ExecutorEnrollment", "LocalFunctionExecutorImpl", "Lwfz;", "Lbc30;", "DeviceExecutor", "Lxb30;", "Lc0z0;", "Ls18;", "Ls5f0;", "Lqwx;")
-                    rmcp_tokens = ("x-codex-rmcp-grant", "noise_hybrid_ik_v1", "RMCP handshake grant rejected", "Missing Noise handshake", "connection_protocol", "executor_registration_id")
+                    rmcp_tokens = ("x-codex-rmcp-grant", "noise_hybrid_ik_v1", "RMCP handshake grant rejected", "Missing Noise handshake", "connection_protocol", "executor_registration_id", "HTTP/2 connection closed", "RMCP provider disconnected", "RmcpHttp2Server$Frame")
                     class_has_rmcp_token = any(
                         any(token.lower() in ins.get_output().lower() for token in rmcp_tokens)
                         for cm in cls.get_methods() if cm.get_code() is not None
