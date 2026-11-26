@@ -57,7 +57,7 @@ def main():
                     dex_lines.append(f"{apk_path.name}\tclasses{dex_index+1}.dex\t{','.join(tags)}\t{value}")
                 for cls in dex.get_classes():
                     clsdesc = cls.get_name()
-                    if any(x.lower() in clsdesc.lower() for x in ("Lfwr0;", "Lb940;", "RmcpHttp2Server", "ExecutorEnrollment", "LocalFunctionExecutorImpl", "Lwfz;", "Lbc30;", "DeviceExecutor")):
+                    if any(x.lower() in clsdesc.lower() for x in ("Lfwr0;", "Lb940;", "RmcpHttp2Server", "ExecutorEnrollment", "LocalFunctionExecutorImpl", "Lwfz;", "Lbc30;", "DeviceExecutor", "Lxb30;", "Lc0z0;", "Ls18;", "Ls5f0;", "Lqwx;")):
                         selected_class_dump.append(f"\n### CLASS {apk_path.name} classes{dex_index+1}.dex {clsdesc}")
                         for cm in cls.get_methods():
                             selected_class_dump.append(f"\n## METHOD {cm.get_class_name()}->{cm.get_name()}{cm.get_descriptor()}")
