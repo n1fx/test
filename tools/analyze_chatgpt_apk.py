@@ -11,7 +11,7 @@ NEEDLES = (
     "mcp", "android-executor", "39801", "deviceexecutor",
     "localfunctionexecutor", "tool_call", "tool_result",
     "Mcp-Session-Id", "tools/list", "tools/call",
-    "RmcpHttp2Server", "requiresLocalExecutor", "executorRegistrationId",
+    "RmcpHttp2Server", "requiresLocalExecutor", "executorRegistrationId",\n    "use_handle_rmcp", "x-codex-rmcp-grant", "RMCP provider disconnected",\n    "noise_hybrid_ik_v1", "RMCP handshake grant rejected", "Missing Noise handshake",
 )
 
 def write(name, data):
@@ -57,7 +57,7 @@ def main():
                     dex_lines.append(f"{apk_path.name}\tclasses{dex_index+1}.dex\t{','.join(tags)}\t{value}")
                 for cls in dex.get_classes():
                     clsdesc = cls.get_name()
-                    if any(x.lower() in clsdesc.lower() for x in ("Lfwr0;", "Lb940;", "RmcpHttp2Server", "ExecutorEnrollment", "LocalFunctionExecutorImpl", "Lwfz;", "Lbc30;", "DeviceExecutor", "Lxb30;", "Lc0z0;", "Ls18;", "Ls5f0;", "Lqwx;")):
+                    if any(x.lower() in clsdesc.lower() for x in ("Lfwr0;", "Lb940;", "RmcpHttp2Server", "ExecutorEnrollment", "LocalFunctionExecutorImpl", "Lwfz;", "Lbc30;", "DeviceExecutor", "Lxb30;", "Lc0z0;", "Ls18;", "Ls5f0;", "Lqwx;", "noise_hybrid_ik_v1", "x-codex-rmcp-grant", "use_handle_rmcp", "RMCP provider disconnected")):
                         selected_class_dump.append(f"\n### CLASS {apk_path.name} classes{dex_index+1}.dex {clsdesc}")
                         for cm in cls.get_methods():
                             selected_class_dump.append(f"\n## METHOD {cm.get_class_name()}->{cm.get_name()}{cm.get_descriptor()}")
@@ -81,7 +81,7 @@ def main():
                             disassembly.append(f"\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")
                             for op, output in matching:
                                 disassembly.append(f"  {op} {output}")
-                        target_tokens = ("39801", "android-executor", "RmcpHttp2Server", "Mcp-Session-Id", "executorRegistrationId", "LocalFunctionExecutorImpl", "DeviceExecutor", "requiresLocalExecutor")
+                        target_tokens = ("39801", "android-executor", "RmcpHttp2Server", "Mcp-Session-Id", "executorRegistrationId", "LocalFunctionExecutorImpl", "DeviceExecutor", "requiresLocalExecutor", "use_handle_rmcp", "x-codex-rmcp-grant", "RMCP provider disconnected", "noise_hybrid_ik_v1")
                         if any(t.lower() in descriptor.lower() for t in target_tokens) or any(t.lower() in ins.get_output().lower() for t in target_tokens for ins in insns):
                             full_target_methods.append(f"\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")
                             full_target_methods.extend(f"  {ins.get_name()} {ins.get_output()}" for ins in insns)
