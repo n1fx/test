@@ -29,6 +29,7 @@
   const-string v2, "use_handle_rmcp"
 
 ### base.apk classes1.dex Lbc30;->b(Ljava/lang/String; Lrol0; Ll2t;)Ljava/lang/Object;
+  const-string v13, "noise_hybrid_ik_v1"
   const-string v14, "rmcp"
   const-string v11, "Invalid signed RMCP provider offer"
   const-string v11, "RMCP registration binding mismatch"
@@ -98,9 +99,18 @@
 ### base.apk classes4.dex Lkb30;->toString()Ljava/lang/String;
   const-string v0, "ExecutorRegistrationId(value="
 
+### base.apk classes4.dex Llb30;->serialize(Lkotlinx/serialization/encoding/Encoder; Ljava/lang/Object;)V
+  const-string v0, "noise_hybrid_ik_v1"
+
 ### base.apk classes4.dex Lmkh1;->p(Ln2d;)Lkotlinx/serialization/json/c;
   const-string v2, "mcpServer/elicitation/request"
   const-string v2, "mcp_tool_call"
+
+### base.apk classes4.dex Lnb30;-><init>(I Lrol0; Ljava/lang/String;)V
+  const-string v3, "noise_hybrid_ik_v1"
+
+### base.apk classes4.dex Lnb30;-><init>(Lrol0;)V
+  const-string v1, "noise_hybrid_ik_v1"
 
 ### base.apk classes4.dex Lob30;-><clinit>()V
   const-string v0, "executorRegistrationId"
@@ -122,6 +132,7 @@ url = "http://127.0.0.1:39801/android-executor/mcp"
 
 ### base.apk classes4.dex Ls5f0;->t(Lool0; Ljava/lang/String; Ljava/lang/String; Lr0z0; Lq0v0; Ljava/security/SecureRandom; Lqq70; Ll2t;)Ljava/lang/Object;
   const-string v12, "RMCP handshake grant rejected"
+  const-string v12, "Missing Noise handshake"
 
 ### base.apk classes4.dex Lu4x0;-><clinit>()V
   const-string v4, "MCP"
@@ -160,6 +171,9 @@ url = "http://127.0.0.1:39801/android-executor/mcp"
 ### base.apk classes5.dex Lv71;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
   const-string v2, "/ps/mcp"
   const-string v2, "tools/call"
+
+### base.apk classes5.dex Lvh00;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v13, "noise_hybrid_ik_v1"
 
 ### base.apk classes5.dex Lwji1;->j(Ljava/lang/String;)Ll2t0;
   const-string v1, "mcp-resource://codex_apps/"

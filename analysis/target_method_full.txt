@@ -881,6 +881,160 @@
   invoke-direct v8, v9, Lih91;-><init>(Ljava/lang/Throwable;)V
   return-object v8
 
+### base.apk classes1.dex Lxfz;-><clinit>()V
+  new-instance v0, Lxfz;
+  invoke-direct v0, Ln9s;-><init>()V
+  sput-object v0, Lxfz;->f Lxfz;
+  sget-object v1, Lcx2;->k2 Lcx2;
+  const-string v2, "use_handle_rmcp"
+  const/4 v3, 0
+  invoke-virtual v0, v2, v3, v1, Ln9s;->c(Ljava/lang/String; Z Lvzc0;)Lej30;
+  move-result-object v2
+  sput-object v2, Lxfz;->g Lej30;
+  const-string v2, "profile_controls_enabled"
+  invoke-virtual v0, v2, v3, v1, Ln9s;->c(Ljava/lang/String; Z Lvzc0;)Lej30;
+  move-result-object v2
+  sput-object v2, Lxfz;->h Lej30;
+  const-string v2, "assistant_connection_enabled"
+  invoke-virtual v0, v2, v3, v1, Ln9s;->c(Ljava/lang/String; Z Lvzc0;)Lej30;
+  move-result-object v0
+  sput-object v0, Lxfz;->i Lej30;
+  return-void 
+
+### base.apk classes1.dex Lbc30;->b(Ljava/lang/String; Lrol0; Ll2t;)Ljava/lang/Object;
+  instance-of v0, v14, Lzb30;
+  if-eqz v0, +011h
+  move-object v0, v14
+  check-cast v0, Lzb30;
+  iget v1, v0, Lzb30;->q I
+  const/high16 v2, -2147483648
+  and-int v3, v1, v2
+  if-eqz v3, +006h
+  sub-int/2addr v1, v2
+  iput v1, v0, Lzb30;->q I
+  goto +6h
+  new-instance v0, Lzb30;
+  invoke-direct v0, v11, v14, Lzb30;-><init>(Lbc30; Ll2t;)V
+  iget-object v14, v0, Lzb30;->o Ljava/lang/Object;
+  iget v1, v0, Lzb30;->q I
+  const/4 v2, 1
+  const/4 v3, 0
+  if-eqz v1, +010h
+  if-ne v1, v2, +008h
+  iget-object v12, v0, Lzb30;->n Ljava/lang/String;
+  invoke-static v14, Leur;->N(Ljava/lang/Object;)V
+  goto +31h
+  const-string v11, "call to 'resume' before 'invoke' with coroutine"
+  invoke-static v11, Ler;->h(Ljava/lang/String;)V
+  return-object v3
+  invoke-static v14, Leur;->N(Ljava/lang/Object;)V
+  new-instance v9, Lnb30;
+  invoke-direct v9, v13, Lnb30;-><init>(Lrol0;)V
+  new-instance v4, Lxb30;
+  const/4 v5, 1
+  const/4 v10, 0
+  const-string v8, "register"
+  move-object v6, v11
+  move-object v7, v12
+  invoke-direct/range v4 ... v10, Lxb30;-><init>(Z Lbc30; Ljava/lang/String; Ljava/lang/String; Ljava/lang/Object; Lj2t;)V
+  new-instance v11, Lcv;
+  const/16 v12, 12
+  iget-object v13, v6, Lbc30;->a Lzjf1;
+  invoke-direct v11, v13, v4, v3, v12, Lcv;-><init>(Llv9; Lbq61; Lj2t; B)V
+  iput-object v7, v0, Lzb30;->n Ljava/lang/String;
+  iput v2, v0, Lzb30;->q I
+  invoke-virtual v13, v11, v0, Llv9;->j(Lkotlin/jvm/functions/Function3; Lj2t;)Ljava/lang/Object;
+  move-result-object v14
+  sget-object v11, Lbrv;->a Lbrv;
+  if-ne v14, v11, +003h
+  return-object v11
+  move-object v12, v7
+  check-cast v14, Ltwk0;
+  invoke-virtual v14, Ltwk0;->a()Lph91;
+  move-result-object v11
+  invoke-static v11, Lqh91;->c(Lph91;)Ljava/lang/Object;
+  move-result-object v11
+  check-cast v11, Lqb30;
+  invoke-virtual v11, Lqb30;->a()Ljava/lang/String;
+  move-result-object v13
+  invoke-static v13, v12, Li930;->b(Ljava/lang/String; Ljava/lang/String;)Z
+  move-result v12
+  if-eqz v12, +08dh
+  invoke-virtual v11, Lqb30;->c()Ljava/lang/String;
+  move-result-object v12
+  const-string v13, "noise_hybrid_ik_v1"
+  invoke-static v12, v13, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v12
+  if-eqz v12, +081h
+  invoke-virtual v11, Lqb30;->d()Ljava/lang/String;
+  move-result-object v12
+  invoke-static v12, Lqq91;->c(Ljava/lang/String;)Lnda1;
+  move-result-object v12
+  iget-object v13, v12, Lnda1;->l Lmq91;
+  sget-object v14, Lmq91;->f Lmq91;
+  invoke-static v13, v14, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v13
+  if-eqz v13, +069h
+  const-string v13, "connection_protocol"
+  invoke-static v12, v13, Lbc30;->c(Lnda1; Ljava/lang/String;)Ljava/lang/String;
+  move-result-object v13
+  const-string v14, "rmcp"
+  invoke-static v13, v14, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v13
+  if-eqz v13, +05bh
+  const-string v13, "role"
+  invoke-static v12, v13, Lbc30;->c(Lnda1; Ljava/lang/String;)Ljava/lang/String;
+  move-result-object v13
+  const-string v14, "environment"
+  invoke-static v13, v14, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v13
+  if-eqz v13, +04dh
+  invoke-virtual v11, Lqb30;->b()Ljava/lang/String;
+  move-result-object v13
+  invoke-static v13, Ljv51;->P0(Ljava/lang/CharSequence;)Z
+  move-result v13
+  if-nez v13, +043h
+  const-string v13, "executor_registration_id"
+  invoke-static v12, v13, Lbc30;->c(Lnda1; Ljava/lang/String;)Ljava/lang/String;
+  move-result-object v13
+  invoke-virtual v11, Lqb30;->b()Ljava/lang/String;
+  move-result-object v14
+  invoke-static v13, v14, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v13
+  if-eqz v13, +033h
+  const-string v13, "sig"
+  invoke-static v12, v13, Lbc30;->c(Lnda1; Ljava/lang/String;)Ljava/lang/String;
+  move-result-object v13
+  if-eqz v13, +02bh
+  sget-object v14, Lbc30;->c Lcuw0;
+  invoke-virtual v14, v13, Lcuw0;->f(Ljava/lang/CharSequence;)Z
+  move-result v13
+  if-ne v13, v2, +023h
+  const-string v13, "v"
+  invoke-static v12, v13, Lbc30;->c(Lnda1; Ljava/lang/String;)Ljava/lang/String;
+  move-result-object v13
+  if-eqz v13, +01bh
+  invoke-static v13, Ljv51;->P0(Ljava/lang/CharSequence;)Z
+  move-result v13
+  if-nez v13, +015h
+  const-string v13, "exp"
+  invoke-static v12, v13, Lbc30;->c(Lnda1; Ljava/lang/String;)Ljava/lang/String;
+  move-result-object v12
+  if-eqz v12, +009h
+  const/16 v13, 10
+  invoke-static v13, v12, Lqv51;->t0(I Ljava/lang/String;)Ljava/lang/Long;
+  move-result-object v12
+  goto +2h
+  move-object v12, v3
+  if-eqz v12, +003h
+  return-object v11
+  const-string v11, "Invalid signed RMCP provider offer"
+  invoke-static v11, Lgr;->h(Ljava/lang/String;)V
+  return-object v3
+  const-string v11, "RMCP registration binding mismatch"
+  invoke-static v11, Lgr;->h(Ljava/lang/String;)V
+  return-object v3
+
 ### base.apk classes3.dex La0g0;-><init>(Lur; Ljava/util/Map; Lg681;)V
   invoke-direct v0, Ljava/lang/Object;-><init>()V
   iput-object v1, v0, La0g0;->a Lur;
@@ -1777,6 +1931,56 @@
   invoke-static v0, v2, v1, Lope0;->o(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
   move-result-object v2
   return-object v2
+
+### base.apk classes4.dex Llb30;->serialize(Lkotlinx/serialization/encoding/Encoder; Ljava/lang/Object;)V
+  check-cast v5, Lnb30;
+  sget-object v3, Llb30;->descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+  invoke-interface v4, v3, Lkotlinx/serialization/encoding/Encoder;->a(Lkotlinx/serialization/descriptors/SerialDescriptor;)Lalr;
+  move-result-object v4
+  sget-object v0, Lpol0;->a Lpol0;
+  iget-object v1, v5, Lnb30;->a Lrol0;
+  iget-object v5, v5, Lnb30;->b Ljava/lang/String;
+  const/4 v2, 0
+  invoke-interface v4, v3, v2, v0, v1, Lalr;->y(Lkotlinx/serialization/descriptors/SerialDescriptor; I Luc11; Ljava/lang/Object;)V
+  invoke-interface v4, Lalr;->E()Z
+  move-result v0
+  if-eqz v0, +003h
+  goto +9h
+  const-string v0, "noise_hybrid_ik_v1"
+  invoke-static v5, v0, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v0
+  if-nez v0, +006h
+  const/4 v0, 1
+  invoke-interface v4, v3, v0, v5, Lalr;->x(Lkotlinx/serialization/descriptors/SerialDescriptor; I Ljava/lang/String;)V
+  invoke-interface v4, Lalr;->d()V
+  return-void 
+
+### base.apk classes4.dex Lnb30;-><init>(I Lrol0; Ljava/lang/String;)V
+  and-int/lit8 v0, v3, 1
+  const/4 v1, 1
+  if-ne v1, v0, +013h
+  invoke-direct v2, Ljava/lang/Object;-><init>()V
+  iput-object v4, v2, Lnb30;->a Lrol0;
+  and-int/lit8 v3, v3, 2
+  if-nez v3, +007h
+  const-string v3, "noise_hybrid_ik_v1"
+  iput-object v3, v2, Lnb30;->b Ljava/lang/String;
+  return-void 
+  iput-object v5, v2, Lnb30;->b Ljava/lang/String;
+  return-void 
+  sget-object v2, Llb30;->a Llb30;
+  invoke-virtual v2, Llb30;->getDescriptor()Lkotlinx/serialization/descriptors/SerialDescriptor;
+  move-result-object v2
+  invoke-static v3, v1, v2, Lepk;->d0(I I Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+  const/4 v2, 0
+  throw v2
+
+### base.apk classes4.dex Lnb30;-><init>(Lrol0;)V
+  invoke-direct v0, Ljava/lang/Object;-><init>()V
+  iput-object v1, v0, Lnb30;->a Lrol0;
+  const-string v1, "noise_hybrid_ik_v1"
+  iput-object v1, v0, Lnb30;->b Ljava/lang/String;
+  return-void 
 
 ### base.apk classes4.dex Lob30;-><clinit>()V
   new-instance v0, Lob30;
@@ -3607,6 +3811,650 @@ url = "http://127.0.0.1:39801/android-executor/mcp"
   nop 
   packed-switch-payload 0 1 2 3 4 5 6 7 8 9 a b c
 
+### base.apk classes5.dex Lvh00;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  move-object/from16 v1, v46
+  iget-byte v0, v1, Lvh00;->n B
+  const/4 v2, 0
+  const/4 v3, 5
+  iget-object v4, v1, Lvh00;->t Ljava/lang/Object;
+  iget-object v5, v1, Lvh00;->r Ljava/lang/Object;
+  const-string v6, "call to 'resume' before 'invoke' with coroutine"
+  sget-object v7, Lbrv;->a Lbrv;
+  const/4 v8, 1
+  iget-object v9, v1, Lvh00;->s Ljava/lang/Object;
+  const/4 v10, 2
+  sget-object v11, Li1a1;->a Li1a1;
+  const/4 v12, 0
+  packed-switch v0, +00004c5h
+  move-object v13, v9
+  check-cast v13, Lbuv0;
+  iget-object v0, v1, Lvh00;->q Ljava/lang/Object;
+  move-object v14, v0
+  check-cast v14, Lwqv;
+  iget-byte v0, v1, Lvh00;->o B
+  if-eqz v0, +023h
+  if-eq v0, v8, +017h
+  if-ne v0, v10, +00fh
+  iget-object v0, v1, Lvh00;->p Ljava/lang/Object;
+  move-object v1, v0
+  check-cast v1, Lv8c0;
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  goto/16 +078h
+  move-exception v0
+  goto/16 +07eh
+  invoke-static v6, Ler;->h(Ljava/lang/String;)V
+  move-object v7, v12
+  goto/16 +0b0h
+  iget-object v0, v1, Lvh00;->p Ljava/lang/Object;
+  check-cast v0, Lv8c0;
+  check-cast v0, Lyj30;
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  goto +37h
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  check-cast v5, Lx1x;
+  if-eqz v5, +031h
+  iget-boolean v0, v5, Lx1x;->b Z
+  if-ne v0, v8, +02dh
+  iget-object v0, v13, Lbuv0;->R1 Lyj0;
+  iget-object v0, v0, Lyj0;->c Ljava/lang/Object;
+  check-cast v0, Lsc51;
+  invoke-virtual v0, Lsc51;->getValue()Ljava/lang/Object;
+  move-result-object v0
+  check-cast v0, Lmtv0;
+  iget-object v0, v0, Lmtv0;->c Lyj30;
+  sget-object v2, Lik10;->b Lwil0;
+  sget-object v2, Lqk10;->d Lqk10;
+  invoke-static v3, v2, Lf0c0;->m0(I Lqk10;)J
+  move-result-wide v2
+  new-instance v5, Lfd20;
+  const/16 v6, 24
+  invoke-direct v5, v0, v12, v6, Lfd20;-><init>(Ljava/lang/Object; Lj2t; B)V
+  iput-object v14, v1, Lvh00;->q Ljava/lang/Object;
+  iput-object v12, v1, Lvh00;->p Ljava/lang/Object;
+  iput-byte v8, v1, Lvh00;->o B
+  invoke-static v2, v3, v5, v1, Ln781;->m(J Lkotlin/jvm/functions/Function2; Lj2t;)Ljava/lang/Object;
+  move-result-object v0
+  if-ne v0, v7, +004h
+  goto/16 +070h
+  iget-boolean v0, v13, Lbuv0;->a2 Z
+  if-eqz v0, +03ah
+  invoke-static v13, Lbuv0;->N(Lbuv0;)Z
+  move-result v0
+  if-nez v0, +003h
+  goto +32h
+  new-instance v0, Lx9g0;
+  const/16 v2, 16
+  invoke-direct v0, v13, v12, v2, Lx9g0;-><init>(Ljava/lang/Object; Lj2t; B)V
+  const/16 v18, 3
+  const/16 v16, 0
+  const/4 v15, 0
+  move-object/from16 v17, v0
+  invoke-static/range v13 ... v18, Lmz9;->w(Lmz9; Lwqv; Lc7; I Lkotlin/jvm/functions/Function2; I)Lv8c0;
+  move-result-object v2
+  check-cast v4, Lrxg1;
+  iput-object v12, v1, Lvh00;->q Ljava/lang/Object;
+  iput-object v2, v1, Lvh00;->p Ljava/lang/Object;
+  iput-byte v10, v1, Lvh00;->o B
+  invoke-virtual v13, v4, v1, Lbuv0;->P(Lrxg1; Ll2t;)Ljava/lang/Object;
+  move-result-object v0
+  if-ne v0, v7, +003h
+  goto +43h
+  move-object v1, v2
+  invoke-interface v1, v12, Lv8c0;->j(Ljava/util/concurrent/CancellationException;)V
+  iput-object v12, v13, Lbuv0;->e2 Lhf51;
+  move-object v7, v11
+  goto +3bh
+  move-exception v0
+  move-object v1, v2
+  invoke-interface v1, v12, Lv8c0;->j(Ljava/util/concurrent/CancellationException;)V
+  iput-object v12, v13, Lbuv0;->e2 Lhf51;
+  throw v0
+  iget-object v0, v13, Lmz9;->Y Luc51;
+  invoke-virtual v0, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v1
+  move-object v3, v1
+  check-cast v3, Lwb51;
+  invoke-virtual v0, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v1
+  move-object v2, v1
+  check-cast v2, Lwtv0;
+  new-instance v2, Lqtv0;
+  const v4, 2131957839
+  invoke-direct v2, v4, Lqtv0;-><init>(I)V
+  invoke-virtual v0, v1, v2, Luc51;->l(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v1
+  if-eqz v1, -013h
+  iget-object v1, v13, Lmz9;->P1 Lhao;
+  if-eqz v1, -02ah
+  invoke-virtual v0, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v0
+  check-cast v0, Lwb51;
+  invoke-static v3, v0, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v2
+  if-nez v2, -036h
+  invoke-virtual v1, v3, v0, Lhao;->invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  goto -3bh
+  return-object v7
+  check-cast v5, Levs0;
+  iget-byte v0, v1, Lvh00;->o B
+  if-eqz v0, +020h
+  if-eq v0, v8, +018h
+  if-ne v0, v10, +010h
+  iget-object v0, v1, Lvh00;->q Ljava/lang/Object;
+  check-cast v0, Levs0;
+  iget-object v1, v1, Lvh00;->p Ljava/lang/Object;
+  check-cast v1, Loh91;
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  move-object v3, v1
+  move-object v1, v0
+  goto +45h
+  invoke-static v6, Ler;->h(Ljava/lang/String;)V
+  move-object v7, v12
+  goto/16 +12ah
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  move-object/from16 v0, v47
+  goto +1ch
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  iget-object v0, v5, Levs0;->R1 Lp3d0;
+  invoke-interface v0, Lp3d0;->getValue()Ljava/lang/Object;
+  move-result-object v0
+  check-cast v0, Lv5s;
+  check-cast v9, Lyur;
+  iget-object v3, v9, Lyur;->a Ljava/lang/String;
+  check-cast v4, Ljava/lang/String;
+  iput-byte v8, v1, Lvh00;->o B
+  invoke-virtual v0, v3, v4, v1, Lv5s;->p(Ljava/lang/String; Ljava/lang/String; Ll2t;)Ljava/lang/Object;
+  move-result-object v0
+  if-ne v0, v7, +004h
+  goto/16 +109h
+  check-cast v0, Lph91;
+  instance-of v3, v0, Loh91;
+  if-eqz v3, +087h
+  move-object v3, v0
+  check-cast v3, Loh91;
+  iget-object v4, v3, Loh91;->b Ljava/lang/Object;
+  check-cast v4, Li1a1;
+  iput-object v3, v1, Lvh00;->p Ljava/lang/Object;
+  iput-object v5, v1, Lvh00;->q Ljava/lang/Object;
+  iput-byte v10, v1, Lvh00;->o B
+  invoke-virtual v5, v12, v1, Levs0;->T(Lr4s; Ll2t;)Ljava/lang/Object;
+  move-result-object v1
+  if-ne v1, v7, +004h
+  goto/16 +0eeh
+  move-object v3, v0
+  move-object v1, v5
+  iget-object v4, v1, Lmz9;->Y Luc51;
+  invoke-virtual v4, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v0
+  move-object v6, v0
+  check-cast v6, Lwb51;
+  invoke-virtual v4, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v0
+  move-object v12, v0
+  check-cast v12, Lqus0;
+  const v44, -402653185
+  const/16 v45, 3
+  const/4 v13, 0
+  const/4 v14, 0
+  const/4 v15, 0
+  const/16 v16, 0
+  const/16 v17, 0
+  const/16 v18, 0
+  const/16 v19, 0
+  const/16 v20, 0
+  const/16 v21, 0
+  const/16 v22, 0
+  const/16 v23, 0
+  const/16 v24, 0
+  const/16 v25, 0
+  const/16 v26, 0
+  const/16 v27, 0
+  const/16 v28, 0
+  const/16 v29, 0
+  const/16 v30, 0
+  const/16 v31, 0
+  const/16 v32, 0
+  const/16 v33, 0
+  const/16 v34, 0
+  const/16 v35, 0
+  const/16 v36, 0
+  const/16 v37, 0
+  const/16 v38, 0
+  const/16 v39, 0
+  const/16 v40, 0
+  const/16 v41, 0
+  const/16 v42, 0
+  const/16 v43, 0
+  invoke-static/range v12 ... v45, Lqus0;->m(Lqus0; Lgjb0; Z Z Lp9t0; Z Lih91; Ljava/lang/String; Levr; Lejs0; Ljava/util/Set; Ljava/util/List; Ljava/util/List; Ldx6; Ljava/lang/String; Ljava/lang/String; Z Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Z Z Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Z Ljava/lang/String; Z Ljava/lang/String; Z Z Lv7t0; I I)Lqus0;
+  move-result-object v7
+  invoke-virtual v4, v0, v7, Luc51;->l(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v0
+  if-eqz v0, -04fh
+  iget-object v0, v1, Lmz9;->P1 Lhao;
+  if-eqz v0, +011h
+  invoke-virtual v4, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v1
+  check-cast v1, Lwb51;
+  invoke-static v6, v1, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v4
+  if-nez v4, +005h
+  invoke-virtual v0, v6, v1, Lhao;->invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  move-object v0, v3
+  instance-of v0, v0, Lih91;
+  if-eqz v0, +079h
+  iget-object v0, v5, Lmz9;->Y Luc51;
+  invoke-virtual v0, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v1
+  check-cast v1, Lwb51;
+  invoke-virtual v0, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v3
+  move-object v12, v3
+  check-cast v12, Lqus0;
+  const v44, -268435457
+  const/16 v45, 3
+  const/4 v13, 0
+  const/4 v14, 0
+  const/4 v15, 0
+  const/16 v16, 0
+  const/16 v17, 0
+  const/16 v18, 0
+  const/16 v19, 0
+  const/16 v20, 0
+  const/16 v21, 0
+  const/16 v22, 0
+  const/16 v23, 0
+  const/16 v24, 0
+  const/16 v25, 0
+  const/16 v26, 0
+  const/16 v27, 0
+  const/16 v28, 0
+  const/16 v29, 0
+  const/16 v30, 0
+  const/16 v31, 0
+  const/16 v32, 0
+  const/16 v33, 0
+  const/16 v34, 0
+  const/16 v35, 0
+  const/16 v36, 0
+  const/16 v37, 0
+  const/16 v38, 0
+  const/16 v39, 0
+  const/16 v40, 0
+  const/16 v41, 0
+  const/16 v42, 0
+  const/16 v43, 0
+  invoke-static/range v12 ... v45, Lqus0;->m(Lqus0; Lgjb0; Z Z Lp9t0; Z Lih91; Ljava/lang/String; Levr; Lejs0; Ljava/util/Set; Ljava/util/List; Ljava/util/List; Ldx6; Ljava/lang/String; Ljava/lang/String; Z Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Z Z Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Z Ljava/lang/String; Z Ljava/lang/String; Z Z Lv7t0; I I)Lqus0;
+  move-result-object v4
+  invoke-virtual v0, v3, v4, Luc51;->l(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v3
+  if-eqz v3, -04fh
+  iget-object v3, v5, Lmz9;->P1 Lhao;
+  if-eqz v3, +011h
+  invoke-virtual v0, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v0
+  check-cast v0, Lwb51;
+  invoke-static v1, v0, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v4
+  if-nez v4, +005h
+  invoke-virtual v3, v1, v0, Lhao;->invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  new-instance v0, Lj851;
+  const v1, 2131953983
+  invoke-direct v0, v1, v2, Lj851;-><init>(I I)V
+  invoke-virtual v5, v0, Lmz9;->d(Ll851;)V
+  move-object v7, v11
+  return-object v7
+  iget-object v0, v1, Lvh00;->q Ljava/lang/Object;
+  check-cast v0, Lg7q0;
+  iget-byte v2, v1, Lvh00;->o B
+  if-eqz v2, +015h
+  if-eq v2, v8, +00fh
+  if-ne v2, v10, +008h
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  move-object/from16 v1, v47
+  goto +2fh
+  invoke-static v6, Ler;->h(Ljava/lang/String;)V
+  move-object v7, v12
+  goto +3eh
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  goto +13h
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  iget-object v2, v1, Lvh00;->p Ljava/lang/Object;
+  check-cast v2, Lv8c0;
+  if-eqz v2, +00bh
+  iput-byte v8, v1, Lvh00;->o B
+  invoke-interface v2, v1, Lv8c0;->r(Lj2t;)Ljava/lang/Object;
+  move-result-object v2
+  if-ne v2, v7, +003h
+  goto +28h
+  iget-object v2, v0, Lg7q0;->a Lb1a1;
+  check-cast v5, Lx7i1;
+  check-cast v9, Lu4q0;
+  iget-object v3, v9, Lu4q0;->a Ljava/lang/String;
+  check-cast v4, Ljava/lang/String;
+  iput-byte v10, v1, Lvh00;->o B
+  invoke-static v2, v5, v3, v4, v1, Lb1a1;->b(Lb1a1; Lx7i1; Ljava/lang/String; Ljava/lang/String; Ll2t;)Ljava/lang/Object;
+  move-result-object v1
+  if-ne v1, v7, +003h
+  goto +15h
+  check-cast v1, Lph91;
+  instance-of v2, v1, Lih91;
+  if-eqz v2, +00fh
+  check-cast v1, Lih91;
+  iget-object v0, v0, Lg7q0;->e Lceg0;
+  iget-object v1, v1, Lih91;->b Ljava/lang/Throwable;
+  const/16 v2, 12
+  const-string v3, "Failed to send Paragen lifecycle signal"
+  invoke-static v0, v3, v1, v12, v2, Lceg0;->f(Lceg0; Ljava/lang/String; Ljava/lang/Throwable; Ljava/util/Map; I)V
+  move-object v7, v11
+  return-object v7
+  check-cast v5, Lzc30;
+  iget-byte v0, v1, Lvh00;->o B
+  if-eqz v0, +025h
+  if-eq v0, v8, +017h
+  if-ne v0, v10, +00fh
+  iget-object v0, v1, Lvh00;->q Ljava/lang/Object;
+  check-cast v0, Ljava/util/Iterator;
+  iget-object v2, v1, Lvh00;->p Ljava/lang/Object;
+  check-cast v2, Lab30;
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  goto/16 +070h
+  invoke-static v6, Ler;->h(Ljava/lang/String;)V
+  move-object v7, v12
+  goto/16 +08ch
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  move-object/from16 v0, v47
+  goto +16h
+  move-exception v0
+  goto +1ch
+  move-exception v0
+  goto +2ch
+  move-exception v0
+  goto +32h
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  check-cast v9, Lb940;
+  iput-byte v8, v1, Lvh00;->o B
+  invoke-virtual v9, v5, v1, Lb940;->C(Lzc30; Lvh00;)Ljava/lang/Object;
+  move-result-object v0
+  if-ne v0, v7, +004h
+  goto/16 +071h
+  check-cast v0, Ljava/util/List;
+  new-instance v2, Loh91;
+  invoke-direct v2, v0, Loh91;-><init>(Ljava/lang/Object;)V
+  goto +20h
+  invoke-static v0, Ll281;->d(Ljava/lang/Exception;)Z
+  move-result v2
+  if-eqz v2, +008h
+  new-instance v2, Ljh91;
+  invoke-direct v2, v0, Lih91;-><init>(Ljava/lang/Throwable;)V
+  goto +14h
+  new-instance v2, Lkh91;
+  invoke-direct v2, v0, Lih91;-><init>(Ljava/lang/Throwable;)V
+  goto +eh
+  new-instance v2, Lmh91;
+  invoke-direct v2, v0, Lih91;-><init>(Ljava/lang/Throwable;)V
+  goto +8h
+  move-exception v0
+  throw v0
+  new-instance v2, Lkh91;
+  invoke-direct v2, v0, Lih91;-><init>(Ljava/lang/Throwable;)V
+  instance-of v0, v2, Loh91;
+  if-eqz v0, +009h
+  check-cast v2, Loh91;
+  iget-object v0, v2, Loh91;->b Ljava/lang/Object;
+  check-cast v0, Ljava/util/List;
+  goto +13h
+  instance-of v0, v2, Lih91;
+  if-eqz v0, +036h
+  iget-object v0, v5, Lzc30;->a Lkotlinx/serialization/json/b;
+  const/16 v2, -32603
+  const-string v3, "Executor request failed"
+  invoke-static v2, v3, v0, Lcri1;->g(I Ljava/lang/String; Lkotlinx/serialization/json/b;)Lx930;
+  move-result-object v0
+  invoke-static v0, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+  move-result-object v0
+  check-cast v0, Ljava/lang/Iterable;
+  check-cast v4, Lab30;
+  invoke-interface v0, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+  move-result-object v0
+  move-object v2, v4
+  invoke-interface v0, Ljava/util/Iterator;->hasNext()Z
+  move-result v3
+  if-eqz v3, +017h
+  invoke-interface v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+  move-result-object v3
+  check-cast v3, Lea30;
+  iget-object v4, v2, Lab30;->d Ldb30;
+  iput-object v2, v1, Lvh00;->p Ljava/lang/Object;
+  iput-object v0, v1, Lvh00;->q Ljava/lang/Object;
+  iput-byte v10, v1, Lvh00;->o B
+  invoke-virtual v4, v2, v3, v1, Ldb30;->invoke(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  move-result-object v3
+  if-ne v3, v7, -018h
+  goto +8h
+  move-object v7, v11
+  goto +6h
+  invoke-static Lfr;->c()V
+  goto/16 -08bh
+  return-object v7
+  check-cast v5, Lool0;
+  iget-object v0, v1, Lvh00;->q Ljava/lang/Object;
+  check-cast v0, Ljava/lang/String;
+  iget-object v2, v1, Lvh00;->p Ljava/lang/Object;
+  check-cast v2, Le830;
+  iget-byte v3, v1, Lvh00;->o B
+  if-eqz v3, +017h
+  if-eq v3, v8, +00fh
+  if-ne v3, v10, +007h
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  goto/16 +076h
+  invoke-static v6, Ler;->h(Ljava/lang/String;)V
+  move-object v7, v12
+  goto/16 +085h
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  move-object/from16 v3, v47
+  goto +13h
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  iget-object v3, v2, Le830;->a Lbc30;
+  invoke-virtual v5, Lool0;->c()Lrol0;
+  move-result-object v6
+  iput-byte v8, v1, Lvh00;->o B
+  invoke-virtual v3, v0, v6, v1, Lbc30;->a(Ljava/lang/String; Lrol0; Ll2t;)Ljava/lang/Object;
+  move-result-object v3
+  if-ne v3, v7, +003h
+  goto +6ch
+  check-cast v3, Lqb30;
+  iget-object v6, v3, Lqb30;->a Ljava/lang/String;
+  iget-object v8, v3, Lqb30;->b Ljava/lang/String;
+  invoke-static v6, v0, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v6
+  if-eqz v6, +05ah
+  iget-object v6, v3, Lqb30;->c Ljava/lang/String;
+  const-string v13, "noise_hybrid_ik_v1"
+  invoke-static v6, v13, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v6
+  if-eqz v6, +04ah
+  invoke-static v8, Lqq91;->c(Ljava/lang/String;)Lnda1;
+  move-result-object v6
+  iget-object v6, v6, Lnda1;->l Lmq91;
+  sget-object v13, Lmq91;->f Lmq91;
+  invoke-static v6, v13, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v6
+  if-eqz v6, +036h
+  new-instance v6, Lhb30;
+  iget-object v13, v3, Lqb30;->d Ljava/lang/String;
+  check-cast v9, Ly76;
+  iget-object v14, v2, Le830;->c Ldsl;
+  new-instance v15, Lb830;
+  invoke-direct v15, v2, v0, v3, v12, Lb830;-><init>(Le830; Ljava/lang/String; Lqb30; Lj2t;)V
+  invoke-direct v6, Ljava/lang/Object;-><init>()V
+  iput-object v5, v6, Lhb30;->a Ljava/lang/Object;
+  iput-object v0, v6, Lhb30;->b Ljava/lang/Object;
+  iput-object v13, v6, Lhb30;->c Ljava/lang/Object;
+  iput-object v9, v6, Lhb30;->d Ljava/lang/Object;
+  iput-object v14, v6, Lhb30;->e Ljava/lang/Object;
+  iput-object v15, v6, Lhb30;->f Ljava/lang/Object;
+  check-cast v4, Lq0y;
+  iget-object v0, v2, Le830;->b Lzu80;
+  new-instance v2, Lfe;
+  const/16 v3, 23
+  invoke-direct v2, v3, v12, v4, v6, Lfe;-><init>(B Lj2t; Ljava/lang/Object; Ljava/lang/Object;)V
+  iput-byte v10, v1, Lvh00;->o B
+  const-string v3, "/executor-relay"
+  invoke-static v0, v8, v3, v2, v1, Lmvi1;->p(Lzu80; Ljava/lang/String; Ljava/lang/String; Lkotlin/jvm/functions/Function2; Ll2t;)Ljava/lang/Object;
+  move-result-object v0
+  if-ne v0, v7, +003h
+  goto +16h
+  move-object v7, v11
+  goto +14h
+  const-string v0, "Executor relay requires a secure WebSocket URL"
+  invoke-static v0, Lgr;->h(Ljava/lang/String;)V
+  goto -78h
+  const-string v0, "Unsupported executor security profile"
+  invoke-static v0, Lgr;->h(Ljava/lang/String;)V
+  goto -7eh
+  const-string v0, "Executor registration environment mismatch"
+  invoke-static v0, Lgr;->h(Ljava/lang/String;)V
+  goto/16 -084h
+  return-object v7
+  iget-object v0, v1, Lvh00;->q Ljava/lang/Object;
+  check-cast v0, Lwh00;
+  iget-byte v13, v1, Lvh00;->o B
+  if-eqz v13, +01bh
+  if-eq v13, v8, +013h
+  if-ne v13, v10, +00bh
+  iget-object v0, v1, Lvh00;->p Ljava/lang/Object;
+  check-cast v0, Lwh00;
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  goto/16 +0b1h
+  invoke-static v6, Ler;->h(Ljava/lang/String;)V
+  move-object v7, v12
+  goto/16 +0f1h
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  move-object/from16 v3, v47
+  goto +1eh
+  invoke-static/range v47, Leur;->N(Ljava/lang/Object;)V
+  iget-object v6, v0, Lwh00;->Q1 Lkd40;
+  check-cast v5, Lnh00;
+  iput-byte v8, v1, Lvh00;->o B
+  invoke-virtual v6, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+  iget-object v13, v5, Lnh00;->a Ljava/lang/String;
+  iget-object v14, v5, Lnh00;->b Ljava/lang/String;
+  new-instance v15, Lsx0;
+  invoke-direct v15, v3, v12, v6, v5, Lsx0;-><init>(B Lj2t; Ljava/lang/Object; Ljava/lang/Object;)V
+  invoke-virtual v6, v13, v14, v15, v1, Lkd40;->b(Ljava/lang/String; Ljava/lang/String; Lkotlin/jvm/functions/Function1; Ll2t;)Ljava/lang/Object;
+  move-result-object v3
+  if-ne v3, v7, +004h
+  goto/16 +0ceh
+  check-cast v3, Ltwk0;
+  invoke-virtual v3, Ltwk0;->a()Lph91;
+  move-result-object v3
+  check-cast v9, Loh00;
+  check-cast v4, Lrh00;
+  instance-of v5, v3, Loh91;
+  if-eqz v5, +04bh
+  check-cast v3, Loh91;
+  iget-object v1, v3, Loh91;->b Ljava/lang/Object;
+  check-cast v1, Li1a1;
+  iget-object v1, v9, Loh00;->c Luh00;
+  if-eqz v1, +009h
+  iget-object v1, v4, Lrh00;->c Lir71;
+  const-string v2, ""
+  invoke-static v1, v2, Lzih1;->n(Lir71; Ljava/lang/String;)V
+  iget-object v4, v0, Lmz9;->Y Luc51;
+  invoke-virtual v4, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v1
+  move-object v5, v1
+  check-cast v5, Lwb51;
+  invoke-virtual v4, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v1
+  move-object v12, v1
+  check-cast v12, Lrh00;
+  const/16 v17, 0
+  const/16 v18, 7
+  const/4 v13, 0
+  const/4 v14, 0
+  const/4 v15, 0
+  sget-object v16, Lci20;->a Lci20;
+  invoke-static/range v12 ... v18, Lrh00;->c(Lrh00; Loh00; Z Z Ljava/util/List; Z I)Lrh00;
+  move-result-object v2
+  invoke-virtual v4, v1, v2, Luc51;->l(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v1
+  if-eqz v1, -018h
+  iget-object v0, v0, Lmz9;->P1 Lhao;
+  if-eqz v0, +081h
+  invoke-virtual v4, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v1
+  check-cast v1, Lwb51;
+  invoke-static v5, v1, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v2
+  if-nez v2, +075h
+  invoke-virtual v0, v5, v1, Lhao;->invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  goto/16 +070h
+  instance-of v4, v3, Lih91;
+  if-eqz v4, +06eh
+  move-object v14, v3
+  check-cast v14, Lih91;
+  new-instance v13, Li851;
+  const/16 v17, 0
+  const/16 v22, 0
+  const/4 v15, 0
+  const/16 v16, 0
+  const/16 v18, 0
+  const/16 v19, 0
+  const/16 v20, 0
+  const/16 v21, 0
+  const/16 v23, 0
+  const/16 v24, 0
+  const/16 v25, 0
+  const/16 v26, 0
+  const/16 v27, 16382
+  invoke-direct/range v13 ... v27, Li851;-><init>(Lih91; Ljava/lang/String; Ljava/lang/String; I Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Le851; I Z Lsl3; Ljava/util/Map; Lg21; I)V
+  iput-object v0, v1, Lvh00;->p Ljava/lang/Object;
+  iput-byte v10, v1, Lvh00;->o B
+  invoke-virtual v0, v13, Lmz9;->H(Ll851;)Li1a1;
+  if-ne v11, v7, +003h
+  goto +47h
+  iget-object v1, v0, Lmz9;->Y Luc51;
+  invoke-virtual v1, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v3
+  check-cast v3, Lwb51;
+  invoke-virtual v1, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v4
+  move-object v12, v4
+  check-cast v12, Lrh00;
+  iget-boolean v5, v12, Lrh00;->d Z
+  if-eqz v5, +008h
+  iget-boolean v5, v12, Lrh00;->b Z
+  if-eqz v5, +004h
+  move v15, v8
+  goto +2h
+  move v15, v2
+  const/16 v17, 0
+  const/16 v18, 23
+  const/4 v13, 0
+  const/4 v14, 0
+  const/16 v16, 0
+  invoke-static/range v12 ... v18, Lrh00;->c(Lrh00; Loh00; Z Z Ljava/util/List; Z I)Lrh00;
+  move-result-object v5
+  invoke-virtual v1, v4, v5, Luc51;->l(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v4
+  if-eqz v4, -022h
+  iget-object v0, v0, Lmz9;->P1 Lhao;
+  if-eqz v0, +011h
+  invoke-virtual v1, Luc51;->getValue()Ljava/lang/Object;
+  move-result-object v1
+  check-cast v1, Lwb51;
+  invoke-static v3, v1, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v2
+  if-nez v2, +005h
+  invoke-virtual v0, v3, v1, Lhao;->invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  move-object v7, v11
+  goto +6h
+  invoke-static Lfr;->c()V
+  goto/16 -0f0h
+  return-object v7
+  packed-switch-payload 0 1 2 3 4
+
 ### base.apk classes6.dex Lyfz;-><clinit>()V
   const-string v0, "DeviceExecutor"
   const/4 v1, 6
@@ -4392,3 +5240,458 @@ url = "http://127.0.0.1:39801/android-executor/mcp"
   invoke-direct/range v0 ... v6, Loe0;-><init>(B I Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object;)V
   iput-object v0, v7, Lqew0;->d Lkotlin/jvm/functions/Function2;
   return-void 
+
+### base.apk classes9.dex Lqwx;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  move-object/from16 v1, v19
+  iget-byte v0, v1, Lqwx;->n B
+  iget-object v2, v1, Lqwx;->u Ljava/lang/Object;
+  iget-object v3, v1, Lqwx;->t Ljava/lang/Object;
+  iget-object v4, v1, Lqwx;->q Ljava/lang/Object;
+  const-string v5, "call to 'resume' before 'invoke' with coroutine"
+  sget-object v6, Lbrv;->a Lbrv;
+  const/4 v7, 1
+  const/4 v8, 2
+  iget-object v9, v1, Lqwx;->r Ljava/lang/Object;
+  iget-object v10, v1, Lqwx;->s Ljava/lang/Object;
+  const/4 v11, 0
+  packed-switch v0, +0000125h
+  check-cast v10, Landroid/content/Context;
+  check-cast v9, Lor6;
+  iget-byte v0, v1, Lqwx;->o B
+  sget-object v12, Li1a1;->a Li1a1;
+  if-eqz v0, +019h
+  if-eq v0, v7, +011h
+  if-ne v0, v8, +00ah
+  iget-object v0, v1, Lqwx;->p Ljava/lang/Object;
+  check-cast v0, Ljava/lang/Throwable;
+  invoke-static/range v20, Leur;->N(Ljava/lang/Object;)V
+  goto +3fh
+  invoke-static v5, Ler;->h(Ljava/lang/String;)V
+  move-object v6, v11
+  goto +42h
+  invoke-static/range v20, Leur;->N(Ljava/lang/Object;)V
+  goto +3dh
+  move-exception v0
+  goto +25h
+  invoke-static/range v20, Leur;->N(Ljava/lang/Object;)V
+  check-cast v4, Lwlr;
+  invoke-virtual v9, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+  new-instance v0, Lji0;
+  const/4 v5, 5
+  invoke-direct v0, v10, v9, v5, Lji0;-><init>(Ljava/lang/Object; Ljava/lang/Object; B)V
+  new-instance v5, Lejq;
+  const v11, -650544734
+  invoke-direct v5, v11, v0, v7, Lejq;-><init>(I Ljava/lang/Object; Z)V
+  invoke-virtual v4, v5, Lwlr;->A(Lkotlin/jvm/functions/Function2;)V
+  check-cast v3, Lwew0;
+  iput-byte v7, v1, Lqwx;->o B
+  invoke-virtual v3, v1, Lwew0;->Q(Lbq61;)Ljava/lang/Object;
+  move-result-object v0
+  if-ne v0, v6, +019h
+  goto +18h
+  iput-object v0, v1, Lqwx;->p Ljava/lang/Object;
+  iput-byte v8, v1, Lqwx;->o B
+  iget-object v1, v9, Lor6;->c Ljava/util/concurrent/atomic/AtomicBoolean;
+  invoke-virtual v1, v7, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+  invoke-virtual v9, v10, v0, Lor6;->a(Landroid/content/Context; Ljava/lang/Throwable;)V
+  if-ne v12, v6, +003h
+  goto +9h
+  check-cast v2, Lq781;
+  const-string v1, "Error in recomposition coroutine"
+  invoke-static v2, v1, v0, Lepk;->r(Lwqv; Ljava/lang/String; Ljava/lang/Throwable;)V
+  move-object v6, v12
+  return-object v6
+  check-cast v3, Lslw0;
+  check-cast v4, Lolw0;
+  iget-byte v0, v1, Lqwx;->o B
+  const/4 v12, 0
+  const/4 v13, 3
+  if-eqz v0, +01fh
+  if-eq v0, v7, +019h
+  if-eq v0, v8, +00dh
+  if-eq v0, v13, +007h
+  invoke-static v5, Ler;->h(Ljava/lang/String;)V
+  move-object v6, v11
+  goto +5ch
+  invoke-static/range v20, Leur;->N(Ljava/lang/Object;)V
+  goto +52h
+  iget-object v0, v1, Lqwx;->p Ljava/lang/Object;
+  check-cast v0, Luq70;
+  invoke-static/range v20, Leur;->N(Ljava/lang/Object;)V
+  move-object/from16 v2, v20
+  goto +2dh
+  invoke-static/range v20, Leur;->N(Ljava/lang/Object;)V
+  goto +13h
+  invoke-static/range v20, Leur;->N(Ljava/lang/Object;)V
+  iput-boolean v12, v4, Lolw0;->a Z
+  check-cast v9, Lvtr;
+  iput-byte v7, v1, Lqwx;->o B
+  check-cast v9, Ldur;
+  invoke-virtual v9, v1, Ldur;->f(Ll2t;)Ljava/lang/Object;
+  move-result-object v0
+  if-ne v0, v6, +003h
+  goto +38h
+  move-object v0, v10
+  check-cast v0, Luq70;
+  iget-object v5, v3, Lslw0;->a Ljava/lang/Object;
+  check-cast v5, Ljava/lang/String;
+  if-nez v5, +015h
+  check-cast v2, Ltq70;
+  iput-object v0, v1, Lqwx;->p Ljava/lang/Object;
+  iput-byte v8, v1, Lqwx;->o B
+  invoke-virtual v2, v1, Ltq70;->i(Lj2t;)Ljava/lang/Object;
+  move-result-object v2
+  if-ne v2, v6, +003h
+  goto +22h
+  check-cast v2, Li930;
+  iget-object v5, v2, Li930;->a Ljava/lang/String;
+  iput-object v5, v3, Lslw0;->a Ljava/lang/Object;
+  new-instance v2, Li930;
+  invoke-direct v2, v5, Li930;-><init>(Ljava/lang/String;)V
+  new-instance v3, Lxq70;
+  invoke-direct v3, v4, v12, Lxq70;-><init>(Lolw0; B)V
+  iput-object v11, v1, Lqwx;->p Ljava/lang/Object;
+  iput-byte v13, v1, Lqwx;->o B
+  invoke-interface v0, v2, v3, v1, Lkotlin/jvm/functions/Function3;->invoke(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+  move-result-object v0
+  if-ne v0, v6, +003h
+  goto +7h
+  const-string v0, "RMCP provider disconnected"
+  invoke-static v0, Lcr;->e(Ljava/lang/String;)V
+  goto -5ch
+  return-object v6
+  iget-byte v0, v1, Lqwx;->o B
+  if-eqz v0, +017h
+  if-eq v0, v7, +00fh
+  if-ne v0, v8, +008h
+  invoke-static/range v20, Leur;->N(Ljava/lang/Object;)V
+  move-object/from16 v0, v20
+  goto +46h
+  invoke-static v5, Ler;->h(Ljava/lang/String;)V
+  move-object v0, v11
+  goto +41h
+  invoke-static/range v20, Leur;->N(Ljava/lang/Object;)V
+  move-object/from16 v0, v20
+  goto +11h
+  invoke-static/range v20, Leur;->N(Ljava/lang/Object;)V
+  iget-object v0, v1, Lqwx;->p Ljava/lang/Object;
+  check-cast v0, Ll9y;
+  iput-byte v7, v1, Lqwx;->o B
+  invoke-virtual v0, v1, Lk9c0;->F(Lj2t;)Ljava/lang/Object;
+  move-result-object v0
+  if-ne v0, v6, +003h
+  goto +2ah
+  move-object v15, v0
+  check-cast v15, Lxvq0;
+  move-object v12, v9
+  check-cast v12, Laxx;
+  iget-object v0, v12, Laxx;->x Lnk10;
+  new-instance v11, Lpwx;
+  move-object v13, v10
+  check-cast v13, Llrq0;
+  move-object v14, v3
+  check-cast v14, Lx020;
+  move-object/from16 v16, v4
+  check-cast v16, Ll9y;
+  move-object/from16 v17, v2
+  check-cast v17, Li9y;
+  const/16 v18, 0
+  invoke-direct/range v11 ... v18, Lpwx;-><init>(Laxx; Llrq0; Lx020; Lxvq0; Ll9y; Li9y; Lj2t;)V
+  iput-byte v8, v1, Lqwx;->o B
+  check-cast v0, Lnlx;
+  sget-object v2, Lmk10;->i Lmk10;
+  invoke-virtual v0, v2, v11, v1, Lnlx;->d(Lmk10; Lkotlin/jvm/functions/Function1; Lj2t;)Ljava/lang/Object;
+  move-result-object v0
+  if-ne v0, v6, +003h
+  move-object v0, v6
+  return-object v0
+  packed-switch-payload 0 1
+
+### base.apk classes10.dex Ls18;->d(Ljava/lang/String; Lrol0; Lyzy0; Ll2t;)Ljava/lang/Object;
+  move-object/from16 v1, v25
+  move-object/from16 v6, v28
+  move-object/from16 v0, v29
+  instance-of v2, v0, Lszy0;
+  if-eqz v2, +012h
+  move-object v2, v0
+  check-cast v2, Lszy0;
+  iget v3, v2, Lszy0;->v I
+  const/high16 v4, -2147483648
+  and-int v5, v3, v4
+  if-eqz v5, +007h
+  sub-int/2addr v3, v4
+  iput v3, v2, Lszy0;->v I
+  move-object v7, v2
+  goto +7h
+  new-instance v2, Lszy0;
+  invoke-direct v2, v1, v0, Lszy0;-><init>(Ls18; Ll2t;)V
+  goto -7h
+  iget-object v0, v7, Lszy0;->t Ljava/lang/Object;
+  iget v2, v7, Lszy0;->v I
+  const/4 v8, 6
+  const/4 v4, 0
+  const/4 v9, 3
+  const/4 v10, 1
+  const/4 v11, 2
+  sget-object v12, Lbrv;->a Lbrv;
+  if-eqz v2, +046h
+  if-eq v2, v10, +02dh
+  if-eq v2, v11, +013h
+  if-ne v2, v9, +00ah
+  iget-object v1, v7, Lszy0;->r Ljava/util/List;
+  check-cast v1, Ljava/util/List;
+  invoke-static v0, Leur;->N(Ljava/lang/Object;)V
+  return-object v0
+  const-string v0, "call to 'resume' before 'invoke' with coroutine"
+  invoke-static v0, Ler;->h(Ljava/lang/String;)V
+  const/4 v0, 0
+  return-object v0
+  iget-object v2, v7, Lszy0;->s Lfqb;
+  iget-object v3, v7, Lszy0;->r Ljava/util/List;
+  check-cast v3, Ljava/util/List;
+  iget-object v5, v7, Lszy0;->q Lkotlin/jvm/functions/Function2;
+  iget-object v6, v7, Lszy0;->p Lyzy0;
+  iget-object v10, v7, Lszy0;->o Lrol0;
+  iget-object v13, v7, Lszy0;->n Ljava/lang/String;
+  invoke-static v0, Leur;->N(Ljava/lang/Object;)V
+  move-object/from16 v17, v5
+  move-object/from16 v16, v10
+  move-object v14, v13
+  goto/16 +0f8h
+  iget-object v2, v7, Lszy0;->r Ljava/util/List;
+  check-cast v2, Ljava/util/List;
+  iget-object v3, v7, Lszy0;->q Lkotlin/jvm/functions/Function2;
+  iget-object v5, v7, Lszy0;->p Lyzy0;
+  iget-object v6, v7, Lszy0;->o Lrol0;
+  iget-object v10, v7, Lszy0;->n Ljava/lang/String;
+  invoke-static v0, Leur;->N(Ljava/lang/Object;)V
+  move-object v13, v6
+  move-object v6, v3
+  move-object v3, v13
+  move-object v13, v2
+  move-object v2, v0
+  move-object v0, v10
+  goto/16 +0b3h
+  invoke-static v0, Leur;->N(Ljava/lang/Object;)V
+  iget-object v0, v6, Lyzy0;->a Le0z0;
+  iget-object v13, v0, Le0z0;->b Ljava/util/ArrayList;
+  invoke-interface v13, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+  move-result-object v0
+  invoke-interface v0, Ljava/util/Iterator;->hasNext()Z
+  move-result v2
+  if-eqz v2, +014h
+  invoke-interface v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+  move-result-object v2
+  move-object v3, v2
+  check-cast v3, Lq3q0;
+  iget-object v3, v3, Lq3q0;->a Ljava/lang/Object;
+  const-string v5, ":path"
+  invoke-static v3, v5, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v3
+  if-eqz v3, -015h
+  goto +2h
+  move-object v2, v4
+  check-cast v2, Lq3q0;
+  if-eqz v2, +00fh
+  iget-object v0, v2, Lq3q0;->b Ljava/lang/Object;
+  check-cast v0, Ljava/lang/String;
+  if-eqz v0, +009h
+  const/16 v2, 63
+  invoke-static v2, v0, v0, Ljv51;->w1(C Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+  move-result-object v0
+  goto +2h
+  move-object v0, v4
+  const-string v2, "/mcp"
+  invoke-static v0, v2, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v0
+  if-nez v0, +00ah
+  new-instance v0, Ldqh0;
+  sget-object v1, Lvz80;->m Lvz80;
+  invoke-direct v0, v1, v4, v8, Ldqh0;-><init>(Lvz80; Lw4c0; I)V
+  return-object v0
+  new-instance v0, Ljava/util/ArrayList;
+  invoke-direct v0, Ljava/util/ArrayList;-><init>()V
+  invoke-interface v13, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+  move-result-object v2
+  invoke-interface v2, Ljava/util/Iterator;->hasNext()Z
+  move-result v3
+  if-eqz v3, +017h
+  invoke-interface v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+  move-result-object v3
+  move-object v5, v3
+  check-cast v5, Lq3q0;
+  iget-object v5, v5, Lq3q0;->a Ljava/lang/Object;
+  const-string v14, "x-codex-rmcp-grant"
+  invoke-static v5, v14, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v5
+  if-eqz v5, -015h
+  invoke-virtual v0, v3, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+  goto -1ah
+  invoke-static v0, Lsmp;->B1(Ljava/util/List;)Ljava/lang/Object;
+  move-result-object v0
+  check-cast v0, Lq3q0;
+  if-eqz v0, +008h
+  iget-object v0, v0, Lq3q0;->b Ljava/lang/Object;
+  check-cast v0, Ljava/lang/String;
+  move-object v3, v0
+  goto +2h
+  move-object v3, v4
+  if-eqz v3, +127h
+  invoke-static v3, Ljv51;->P0(Ljava/lang/CharSequence;)Z
+  move-result v0
+  if-eqz v0, +004h
+  goto/16 +11fh
+  sget-object v0, Lik10;->b Lwil0;
+  const/16 v0, 15
+  sget-object v2, Lqk10;->d Lqk10;
+  invoke-static v0, v2, Lf0c0;->m0(I Lqk10;)J
+  move-result-wide v14
+  new-instance v0, Lfl0;
+  const/16 v5, 24
+  move-object/from16 v2, v27
+  invoke-direct/range v0 ... v5, Lfl0;-><init>(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object; Lj2t; B)V
+  move-object v2, v0
+  move-object/from16 v0, v26
+  iput-object v0, v7, Lszy0;->n Ljava/lang/String;
+  move-object/from16 v3, v27
+  iput-object v3, v7, Lszy0;->o Lrol0;
+  iput-object v6, v7, Lszy0;->p Lyzy0;
+  iput-object v4, v7, Lszy0;->q Lkotlin/jvm/functions/Function2;
+  iput-object v13, v7, Lszy0;->r Ljava/util/List;
+  iput v10, v7, Lszy0;->v I
+  invoke-static v14, v15, v2, v7, Ln781;->m(J Lkotlin/jvm/functions/Function2; Lj2t;)Ljava/lang/Object;
+  move-result-object v2
+  if-ne v2, v12, +004h
+  goto/16 +0cbh
+  move-object v5, v6
+  move-object v6, v4
+  sget-object v10, Ljava/lang/Boolean;->TRUE Ljava/lang/Boolean;
+  invoke-static v2, v10, Lu6j0;->p(Ljava/lang/Object; Ljava/lang/Object;)Z
+  move-result v2
+  if-nez v2, +004h
+  goto/16 +0e7h
+  new-instance v2, Lfqb;
+  invoke-direct v2, Ljava/lang/Object;-><init>()V
+  move-object v10, v6
+  move-object v6, v5
+  move-object v5, v10
+  move-object v10, v3
+  move-object v3, v13
+  move-object v13, v0
+  iput-object v13, v7, Lszy0;->n Ljava/lang/String;
+  iput-object v10, v7, Lszy0;->o Lrol0;
+  iput-object v6, v7, Lszy0;->p Lyzy0;
+  iput-object v5, v7, Lszy0;->q Lkotlin/jvm/functions/Function2;
+  move-object v0, v3
+  check-cast v0, Ljava/util/List;
+  iput-object v0, v7, Lszy0;->r Ljava/util/List;
+  iput-object v2, v7, Lszy0;->s Lfqb;
+  iput v11, v7, Lszy0;->v I
+  invoke-virtual v6, v7, Lyzy0;->a(Lj2t;)Ljava/io/Serializable;
+  move-result-object v0
+  if-ne v0, v12, -0f9h
+  goto/16 +09bh
+  check-cast v0, [B
+  if-nez v0, +099h
+  check-cast v3, Ljava/lang/Iterable;
+  new-instance v0, Ljava/util/ArrayList;
+  invoke-direct v0, Ljava/util/ArrayList;-><init>()V
+  invoke-interface v3, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+  move-result-object v3
+  invoke-interface v3, Ljava/util/Iterator;->hasNext()Z
+  move-result v5
+  if-eqz v5, +036h
+  invoke-interface v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+  move-result-object v5
+  move-object v6, v5
+  check-cast v6, Lq3q0;
+  iget-object v6, v6, Lq3q0;->a Ljava/lang/Object;
+  check-cast v6, Ljava/lang/String;
+  const-string v8, "mcp-"
+  const/4 v10, 0
+  invoke-static v6, v8, v10, Lqv51;->q0(Ljava/lang/String; Ljava/lang/String; Z)Z
+  move-result v8
+  if-nez v8, +01eh
+  const-string v23, "last-event-id"
+  const-string v24, "retry-after"
+  const-string v18, "accept"
+  const-string v19, "origin"
+  const-string v20, "content-type"
+  const-string v21, "content-encoding"
+  const-string v22, "accept-encoding"
+  filled-new-array/range v18 ... v24, [Ljava/lang/String;
+  move-result-object v8
+  invoke-static v8, Lu17;->F1([Ljava/lang/Object;)Ljava/util/Set;
+  move-result-object v8
+  invoke-interface v8, v6, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+  move-result v6
+  if-eqz v6, -034h
+  invoke-virtual v0, v5, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+  goto -39h
+  new-instance v15, Ljava/util/ArrayList;
+  const/16 v3, 10
+  invoke-static v0, v3, Ltmp;->r0(Ljava/lang/Iterable; I)I
+  move-result v3
+  invoke-direct v15, v3, Ljava/util/ArrayList;-><init>(I)V
+  invoke-virtual v0, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+  move-result-object v0
+  invoke-interface v0, Ljava/util/Iterator;->hasNext()Z
+  move-result v3
+  if-eqz v3, +019h
+  invoke-interface v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+  move-result-object v3
+  check-cast v3, Lq3q0;
+  iget-object v5, v3, Lq3q0;->a Ljava/lang/Object;
+  check-cast v5, Ljava/lang/String;
+  iget-object v3, v3, Lq3q0;->b Ljava/lang/Object;
+  check-cast v3, Ljava/lang/String;
+  new-instance v6, Lw830;
+  invoke-direct v6, v5, v3, Lw830;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+  invoke-virtual v15, v6, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+  goto -1ch
+  iget-object v0, v1, Ls18;->b Ljava/lang/Object;
+  move-object v13, v0
+  check-cast v13, Lfwr0;
+  new-instance v0, Legp0;
+  const/16 v1, 12
+  invoke-direct v0, v2, v1, Legp0;-><init>(Ljava/lang/Object; B)V
+  iput-object v4, v7, Lszy0;->n Ljava/lang/String;
+  iput-object v4, v7, Lszy0;->o Lrol0;
+  iput-object v4, v7, Lszy0;->p Lyzy0;
+  iput-object v4, v7, Lszy0;->q Lkotlin/jvm/functions/Function2;
+  iput-object v4, v7, Lszy0;->r Ljava/util/List;
+  iput-object v4, v7, Lszy0;->s Lfqb;
+  iput v9, v7, Lszy0;->v I
+  move-object/from16 v18, v0
+  move-object/from16 v19, v7
+  invoke-virtual/range v13 ... v19, Lfwr0;->c(Ljava/lang/String; Ljava/util/List; Lrol0; Lkotlin/jvm/functions/Function2; Lkotlin/jvm/functions/Function0; Ll2t;)Ljava/lang/Object;
+  move-result-object v0
+  if-ne v0, v12, +003h
+  return-object v12
+  return-object v0
+  move-object/from16 v19, v7
+  iget-wide v9, v2, Lfqb;->b J
+  array-length v5, v0
+  move-object v7, v12
+  int-to-long v11, v5
+  add-long/2addr v9, v11
+  const-wide/32 v11, 1048576
+  cmp-long v5, v9, v11
+  if-lez v5, +00ah
+  new-instance v0, Ldqh0;
+  sget-object v1, Lvz80;->q Lvz80;
+  invoke-direct v0, v1, v4, v8, Ldqh0;-><init>(Lvz80; Lw4c0; I)V
+  return-object v0
+  invoke-virtual v2, v0, Lfqb;->write([B)V
+  move-object v12, v7
+  move-object v13, v14
+  move-object/from16 v10, v16
+  move-object/from16 v5, v17
+  move-object/from16 v7, v19
+  const/4 v9, 3
+  const/4 v11, 2
+  goto/16 -0d8h
+  new-instance v0, Ldqh0;
+  sget-object v1, Lvz80;->l Lvz80;
+  invoke-direct v0, v1, v4, v8, Ldqh0;-><init>(Lvz80; Lw4c0; I)V
+  return-object v0

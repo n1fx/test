@@ -7,12 +7,13 @@ base.apk	classes1.dex	mcp	https://platform.openai.com/docs/mcp#risks-and-safety
 base.apk	classes1.dex	mcp	mcp://kakao
 base.apk	classes1.dex	mcp	mcp://komi
 base.apk	classes1.dex	mcp	rmcp
-base.apk	classes1.dex	mcp	use_handle_rmcp
+base.apk	classes1.dex	mcp,use_handle_rmcp	use_handle_rmcp
+base.apk	classes1.dex	noise_hybrid_ik_v1	noise_hybrid_ik_v1
 base.apk	classes10.dex	mcp	/mcp
 base.apk	classes10.dex	mcp	CodexMcpExtensionAction{
 base.apk	classes10.dex	mcp	mcp-
 base.apk	classes10.dex	mcp	type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction
-base.apk	classes10.dex	mcp	x-codex-rmcp-grant
+base.apk	classes10.dex	mcp,x-codex-rmcp-grant	x-codex-rmcp-grant
 base.apk	classes10.dex	tool_call	CODEX_CHATGPT_HANDOFF_LIFECYCLE_ACTION_TOOL_CALLED
 base.apk	classes3.dex	localfunctionexecutor	LocalFunctionExecutorImpl
 base.apk	classes3.dex	mcp	686lQhd7kGqR8F2BTZNa0MCpbpQuNsmhT7vyRHy9apU=
@@ -21,24 +22,26 @@ base.apk	classes3.dex	mcp	This app tool is no longer available through dynamic t
 base.apk	classes3.dex	mcp	item/mcpToolCall/progress
 base.apk	classes3.dex	mcp	mcpServerOpenaiFormElicitation
 base.apk	classes3.dex	mcp	type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction
+base.apk	classes4.dex	Missing Noise handshake	Missing Noise handshake
 base.apk	classes4.dex	android-executor	file:///android-executor
 base.apk	classes4.dex	android-executor	file:///android-executor/device-executor
 base.apk	classes4.dex	executorRegistrationId	ExecutorRegistrationId(value=
 base.apk	classes4.dex	executorRegistrationId	executorRegistrationId
 base.apk	classes4.dex	mcp	CodexRemoteMcpServerElicitationParam
 base.apk	classes4.dex	mcp	MCP
-base.apk	classes4.dex	mcp	RMCP handshake grant rejected
 base.apk	classes4.dex	mcp	item/mcpToolCall/progress
 base.apk	classes4.dex	mcp	mcpServer/elicitation/request
 base.apk	classes4.dex	mcp	mcp_servers
 base.apk	classes4.dex	mcp	mcp_tool_execution_error
 base.apk	classes4.dex	mcp	setMcpModelContext
 base.apk	classes4.dex	mcp,Mcp-Session-Id	Mcp-Session-Id
+base.apk	classes4.dex	mcp,RMCP handshake grant rejected	RMCP handshake grant rejected
 base.apk	classes4.dex	mcp,android-executor,39801	[mcp_servers.android_native]
 url = "http://127.0.0.1:39801/android-executor/mcp"
 
 base.apk	classes4.dex	mcp,android-executor,39801	http://127.0.0.1:39801/android-executor/mcp
 base.apk	classes4.dex	mcp,tool_call	mcp_tool_call
+base.apk	classes4.dex	noise_hybrid_ik_v1	noise_hybrid_ik_v1
 base.apk	classes4.dex	tool_result	tool_result
 base.apk	classes5.dex	mcp	/ps/mcp
 base.apk	classes5.dex	mcp	CodexRemoteMcpServerElicitationParam
@@ -47,6 +50,7 @@ base.apk	classes5.dex	mcp	mcp-resource://codex_apps/
 base.apk	classes5.dex	mcp	mcp/skill
 base.apk	classes5.dex	mcp	mcpServer/elicitation/request
 base.apk	classes5.dex	mcp	ps/mcp
+base.apk	classes5.dex	noise_hybrid_ik_v1	noise_hybrid_ik_v1
 base.apk	classes5.dex	tool_result	call_tool_result
 base.apk	classes5.dex	tools/call	tools/call
 base.apk	classes6.dex	deviceexecutor	DeviceExecutor
@@ -114,8 +118,8 @@ base.apk	classes8.dex	tool_call	tool_call
 base.apk	classes9.dex	mcp	Closing MCP server
 base.apk	classes9.dex	mcp	Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
 base.apk	classes9.dex	mcp	McpProtocol
-base.apk	classes9.dex	mcp	RMCP provider disconnected
 base.apk	classes9.dex	mcp	onFatalExceptionFromCPP
+base.apk	classes9.dex	mcp,RMCP provider disconnected	RMCP provider disconnected
 base.apk	classes9.dex	tool_result	TOOL_RESULT
 base.apk	classes9.dex	tool_result	tool_result
 base.apk	classes9.dex	tools/call	tools/call
