@@ -30,3 +30,10 @@
 2. Trace `x-codex-rmcp-grant` into the Noise handshake and identify how the grant is accepted or rejected.
 3. Determine if this RMCP path is gated by feature flags, enrollment state, or user-facing activation.
 4. Do not modify ACA until a compatible transport/handshake integration point is established.
+
+
+## Additional trace of grant-bearing `/mcp` request
+
+- The `Ls18.d(String, Rmcp-related objects...)` coroutine is the extracted method containing both `/mcp` path comparison and `x-codex-rmcp-grant` header extraction. It appears to reject/non-handle other paths, extracts a non-empty grant, performs a timeout-wrapped follow-up operation, and filters/rebuilds headers before invoking `Lfwr0.c(...)`.
+- `Lfwr0.c(...)` is the previously identified local endpoint request handler at the app's executor MCP endpoint; this method-level linkage suggests the grant-bearing request path is connected into that local MCP handler flow. Exact grant validation and the RMCP server's lifecycle remain unproven.
+- `Lc0z0` is the frame callback/lock-queue handler for `RmcpHttp2Server.Frame`; extraction does not yet show its construction being tied to a startup lifecycle.
