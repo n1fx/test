@@ -151,6 +151,7 @@ def main():
             inventory.append(f"ANALYSIS ERROR for {apk_path.name}: {type(exc).__name__}: {exc}")
     write("apk_inventory.txt", "\n".join(inventory) + "\n")
     write("manifest_index.txt", "\n".join(manifests) + "\n")
+    write("service_components.txt", "\\n".join(sorted(set(service_component_lines))) + "\\n")
     write("activity_components.txt", "\n".join(sorted(set(activity_component_lines))) + "\n")
     write("mcp_executor_strings.txt", "\n".join(sorted(set(dex_lines))) + "\n")
     write("mcp_executor_methods_index.txt", "\n".join(sorted(set(method_lines))) + "\n")
