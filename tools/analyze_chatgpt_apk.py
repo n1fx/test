@@ -55,6 +55,7 @@ def main():
             a, dexes, analysis = AnalyzeAPK(str(apk_path))
             manifest = a.get_android_manifest_xml()
             manifest_activity_names = set()
+            manifest_service_names = set()
             if manifest is not None:
                 from lxml import etree
                 manifest_text = etree.tostring(manifest, encoding='unicode', pretty_print=True)
