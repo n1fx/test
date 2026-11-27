@@ -48,6 +48,7 @@ def main():
     handshake_callers = []
     selected_class_dump = []
     activity_component_lines = []
+    service_component_lines = []
     for apk_path in apk_paths:
         inventory.append(f"\n{apk_path} ({apk_path.stat().st_size} bytes)")
         try:
