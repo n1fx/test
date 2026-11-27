@@ -80,10 +80,14 @@ def main():
                             component = package_name + component
                         elif "." not in component:
                             component = package_name + "." + component
-                        manifest_activity_names.add(component)
-                        activity_component_lines.append(
-                            f"{apk_path.name}\\t{tag}\\t{component}\\talias_target={target or ''}"
-                        )
+                        if tag == "service":
+                            manifest_service_names.add(component)
+                            service_component_lines.append(f"{apk_path.name}\\t{tag}\\t{component}")
+                        else:
+                            manifest_activity_names.add(component)
+                            activity_component_lines.append(
+                                f"{apk_path.name}\\t{tag}\\t{component}\\talias_target={target or ''}"
+                            )
             for dex_index, dex in enumerate(dexes):
                 strings = list(dex.get_strings())
                 hits = [(s, [n for n in NEEDLES if n.lower() in s.lower()]) for s in strings]
