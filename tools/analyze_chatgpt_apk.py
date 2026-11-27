@@ -41,7 +41,7 @@ def main():
     method_lines = []
     disassembly = []
     full_target_methods = []
-    server_reference_methods = []
+    server_reference_methods = []\n    handshake_callers = []
     selected_class_dump = []
     for apk_path in apk_paths:
         inventory.append(f"\n{apk_path} ({apk_path.stat().st_size} bytes)")
@@ -82,8 +82,8 @@ def main():
                             continue
                         insns = list(code.get_bc().get_instructions())
                         descriptor = f"{method.get_class_name()}->{method.get_name()}{method.get_descriptor()}"
-                        server_refs = [ins.get_output() for ins in insns if "RmcpHttp2Server" in ins.get_output()]
-                        if server_refs or "RmcpHttp2Server" in descriptor:
+                        server_refs = [ins.get_output() for ins in insns if "RmcpHttp2Server" in ins.get_output()]\n                        handshake_refs = [ins.get_output() for ins in insns if "Ls5f0;->t(" in ins.get_output()]
+                        if handshake_refs:\n                            handshake_callers.append(f"\\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")\n                            handshake_callers.extend(f"  {ins.get_name()} {ins.get_output()}" for ins in insns)\n                        if server_refs or "RmcpHttp2Server" in descriptor:
                             server_reference_methods.append(f"\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")
                             server_reference_methods.extend(f"  {ins.get_name()} {ins.get_output()}" for ins in insns)
                         matching = []
