@@ -1,5 +1,12 @@
 base.apk	classes1.dex	39801	3980115485
+base.apk	classes1.dex	android.intent.action.PROCESS_TEXT	android.intent.action.PROCESS_TEXT
+base.apk	classes1.dex	android.intent.action.SEND	android.intent.action.SEND
+base.apk	classes1.dex	android.intent.action.SEND,android.intent.action.SEND_MULTIPLE	android.intent.action.SEND_MULTIPLE
+base.apk	classes1.dex	android.intent.extra.PROCESS_TEXT	android.intent.extra.PROCESS_TEXT
+base.apk	classes1.dex	android.intent.extra.TEXT	android.intent.extra.TEXT
 base.apk	classes1.dex	deviceexecutor	Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;
+base.apk	classes1.dex	getIntent	getIntent
+base.apk	classes1.dex	getIntent	getIntents
 base.apk	classes1.dex	mcp	Invalid signed RMCP provider offer
 base.apk	classes1.dex	mcp	RMCP registration binding mismatch
 base.apk	classes1.dex	mcp	Whether to include truncated command output, reasoning content, and file diffs. MCP and dynamic-tool result payloads remain omitted.
@@ -9,6 +16,10 @@ base.apk	classes1.dex	mcp	mcp://komi
 base.apk	classes1.dex	mcp	rmcp
 base.apk	classes1.dex	mcp,use_handle_rmcp	use_handle_rmcp
 base.apk	classes1.dex	noise_hybrid_ik_v1,noise	noise_hybrid_ik_v1
+base.apk	classes1.dex	onNewIntent	addOnNewIntentListener
+base.apk	classes1.dex	onNewIntent	onNewIntent
+base.apk	classes1.dex	onNewIntent	onNewIntentListeners
+base.apk	classes1.dex	onNewIntent	removeOnNewIntentListener
 base.apk	classes10.dex	mcp	/mcp
 base.apk	classes10.dex	mcp	CodexMcpExtensionAction{
 base.apk	classes10.dex	mcp	mcp-
@@ -22,6 +33,14 @@ base.apk	classes10.dex	noise	NoiseSuppressor: is now:
 base.apk	classes10.dex	noise	NoiseSuppressor: was 
 base.apk	classes10.dex	noise	isNoiseSuppressorSupported
 base.apk	classes10.dex	tool_call	CODEX_CHATGPT_HANDOFF_LIFECYCLE_ACTION_TOOL_CALLED
+base.apk	classes3.dex	android.intent.action.PROCESS_TEXT	android.intent.action.PROCESS_TEXT
+base.apk	classes3.dex	android.intent.action.SEND	android.intent.action.SEND
+base.apk	classes3.dex	android.intent.action.SEND,android.intent.action.SEND_MULTIPLE	android.intent.action.SEND_MULTIPLE
+base.apk	classes3.dex	android.intent.extra.PROCESS_TEXT	android.intent.extra.PROCESS_TEXT
+base.apk	classes3.dex	android.intent.extra.PROCESS_TEXT	android.intent.extra.PROCESS_TEXT_READONLY
+base.apk	classes3.dex	android.intent.extra.TEXT	android.intent.extra.TEXT
+base.apk	classes3.dex	getIntent	getIntent
+base.apk	classes3.dex	getIntent	getIntentSender
 base.apk	classes3.dex	localfunctionexecutor	LocalFunctionExecutorImpl
 base.apk	classes3.dex	mcp	686lQhd7kGqR8F2BTZNa0MCpbpQuNsmhT7vyRHy9apU=
 base.apk	classes3.dex	mcp	Lmcp0;
@@ -36,8 +55,14 @@ base.apk	classes3.dex	noise	noiseFactor must not be NaN
 base.apk	classes4.dex	Missing Noise handshake,noise	Missing Noise handshake
 base.apk	classes4.dex	android-executor	file:///android-executor
 base.apk	classes4.dex	android-executor	file:///android-executor/device-executor
+base.apk	classes4.dex	android.intent.action.SEND	android.intent.action.SEND
+base.apk	classes4.dex	android.intent.action.SEND	android.intent.action.SENDTO
+base.apk	classes4.dex	android.intent.action.SEND,android.intent.action.SEND_MULTIPLE	android.intent.action.SEND_MULTIPLE
+base.apk	classes4.dex	android.intent.extra.TEXT	android.intent.extra.TEXT
 base.apk	classes4.dex	executorRegistrationId	ExecutorRegistrationId(value=
 base.apk	classes4.dex	executorRegistrationId	executorRegistrationId
+base.apk	classes4.dex	getIntent	getIntent
+base.apk	classes4.dex	getIntent	getIntentSender
 base.apk	classes4.dex	mcp	CodexRemoteMcpServerElicitationParam
 base.apk	classes4.dex	mcp	MCP
 base.apk	classes4.dex	mcp	item/mcpToolCall/progress
@@ -121,6 +146,14 @@ base.apk	classes4.dex	noise	noiseAlpha
 base.apk	classes4.dex	noise	noiseTexture
 base.apk	classes4.dex	noise_hybrid_ik_v1,noise	noise_hybrid_ik_v1
 base.apk	classes4.dex	tool_result	tool_result
+base.apk	classes5.dex	android.intent.action.PROCESS_TEXT	android.intent.action.PROCESS_TEXT
+base.apk	classes5.dex	android.intent.action.SEND	android.intent.action.SEND
+base.apk	classes5.dex	android.intent.action.SEND	android.intent.action.SENDTO
+base.apk	classes5.dex	android.intent.action.SEND,android.intent.action.SEND_MULTIPLE	android.intent.action.SEND_MULTIPLE
+base.apk	classes5.dex	android.intent.extra.TEXT	android.intent.extra.TEXT
+base.apk	classes5.dex	getIntent	getIntent
+base.apk	classes5.dex	getIntent	getIntent()Ljava/lang/String;
+base.apk	classes5.dex	getIntent	getIntentSender
 base.apk	classes5.dex	mcp	/ps/mcp
 base.apk	classes5.dex	mcp	CodexRemoteMcpServerElicitationParam
 base.apk	classes5.dex	mcp	mcp
@@ -130,9 +163,14 @@ base.apk	classes5.dex	mcp	mcpServer/elicitation/request
 base.apk	classes5.dex	mcp	ps/mcp
 base.apk	classes5.dex	noise	noise.invalid:443
 base.apk	classes5.dex	noise_hybrid_ik_v1,noise	noise_hybrid_ik_v1
+base.apk	classes5.dex	onNewIntent	onNewIntent
+base.apk	classes5.dex	onNewIntent	removeOnNewIntentListener
 base.apk	classes5.dex	tool_result	call_tool_result
 base.apk	classes5.dex	tools/call	tools/call
+base.apk	classes6.dex	android.intent.action.SEND	android.intent.action.SEND
+base.apk	classes6.dex	android.intent.extra.TEXT	android.intent.extra.TEXT
 base.apk	classes6.dex	deviceexecutor	DeviceExecutor
+base.apk	classes6.dex	getIntent	getIntent
 base.apk	classes6.dex	mcp	Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
 base.apk	classes6.dex	mcp	Lmcp;
 base.apk	classes6.dex	mcp	McpServerElicitation
@@ -154,12 +192,20 @@ base.apk	classes6.dex	mcp	mcp_request_meta
 base.apk	classes6.dex	mcp	mcp_servers.codex_app
 base.apk	classes6.dex	mcp	protobuf_analytics_events.v1.CodexMcpExtensionAction
 base.apk	classes6.dex	mcp,tool_call	mcp_tool_call
+base.apk	classes6.dex	onNewIntent	addOnNewIntentListener
 base.apk	classes6.dex	tool_call	tool_call_safety_summary
 base.apk	classes6.dex	tool_result	call_tool_result
 base.apk	classes6.dex	tool_result	tool_result
 base.apk	classes6.dex	tools/call	tools/call
 base.apk	classes6.dex	tools/list	tools/list
 base.apk	classes7.dex	HTTP/2 connection closed	HTTP/2 connection closed
+base.apk	classes7.dex	android.intent.action.PROCESS_TEXT	android.intent.action.PROCESS_TEXT
+base.apk	classes7.dex	android.intent.action.SEND	android.intent.action.SEND
+base.apk	classes7.dex	android.intent.action.SEND	android.intent.action.SENDTO
+base.apk	classes7.dex	android.intent.action.SEND,android.intent.action.SEND_MULTIPLE	android.intent.action.SEND_MULTIPLE
+base.apk	classes7.dex	android.intent.extra.TEXT	android.intent.extra.TEXT
+base.apk	classes7.dex	getIntent	getIntent
+base.apk	classes7.dex	getIntent	getIntentSender
 base.apk	classes7.dex	mcp	
         |Tool registration will proceed, but this may cause compatibility issues.
         |Consider updating the tool name to conform to the MCP tool naming standard.
@@ -191,7 +237,15 @@ base.apk	classes7.dex	mcp,tool_call	mcp_tool_call
 base.apk	classes7.dex	mcp,tool_result	mcp_tool_result
 base.apk	classes7.dex	requiresLocalExecutor	requiresLocalExecutor
 base.apk	classes7.dex	tool_result	call_tool_result
+base.apk	classes8.dex	android.intent.action.PROCESS_TEXT	android.intent.action.PROCESS_TEXT
+base.apk	classes8.dex	android.intent.action.SEND	android.intent.action.SEND
+base.apk	classes8.dex	android.intent.action.SEND	android.intent.action.SENDTO
+base.apk	classes8.dex	android.intent.extra.PROCESS_TEXT	android.intent.extra.PROCESS_TEXT
+base.apk	classes8.dex	android.intent.extra.PROCESS_TEXT	android.intent.extra.PROCESS_TEXT_READONLY
+base.apk	classes8.dex	android.intent.extra.TEXT	android.intent.extra.TEXT
 base.apk	classes8.dex	deviceexecutor	Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;
+base.apk	classes8.dex	getIntent	getIntent
+base.apk	classes8.dex	getIntent	getIntent()Ljava/lang/String;
 base.apk	classes8.dex	mcp	/backend-api/ecosystem/call_mcp
 base.apk	classes8.dex	mcp	/backend-api/ps/mcp
 base.apk	classes8.dex	noise	Landroid/media/audiofx/NoiseSuppressor;
@@ -200,8 +254,11 @@ base.apk	classes8.dex	noise	WaveNoise
 base.apk	classes8.dex	noise	horizon/horizon_compact_baked_wave_noise.webp
 base.apk	classes8.dex	noise	uBakedWaveNoise
 base.apk	classes8.dex	noise	uListeningTextureNoiseScale
+base.apk	classes8.dex	onNewIntent	onNewIntent
 base.apk	classes8.dex	tool_call	tool_call
 base.apk	classes9.dex	HTTP/2 connection closed	HTTP/2 connection closed
+base.apk	classes9.dex	android.intent.action.SEND	android.intent.action.SENDTO
+base.apk	classes9.dex	getIntent	getIntent
 base.apk	classes9.dex	mcp	Closing MCP server
 base.apk	classes9.dex	mcp	Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
 base.apk	classes9.dex	mcp	McpProtocol
@@ -209,6 +266,7 @@ base.apk	classes9.dex	mcp	onFatalExceptionFromCPP
 base.apk	classes9.dex	mcp,RMCP provider disconnected,RMCP provider disconnected	RMCP provider disconnected
 base.apk	classes9.dex	noise	, noiseFactor=
 base.apk	classes9.dex	noise	Landroidx/camera/camera2/compat/quirk/TemporalNoiseQuirk;
+base.apk	classes9.dex	onNewIntent	onNewIntent
 base.apk	classes9.dex	tool_result	TOOL_RESULT
 base.apk	classes9.dex	tool_result	tool_result
 base.apk	classes9.dex	tools/call	tools/call
