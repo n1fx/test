@@ -49,6 +49,7 @@ def main():
     selected_class_dump = []
     activity_component_lines = []
     service_component_lines = []
+    service_match_diagnostics = []
     for apk_path in apk_paths:
         inventory.append(f"\n{apk_path} ({apk_path.stat().st_size} bytes)")
         try:
@@ -121,10 +122,18 @@ def main():
                     class_name_dotted = clsdesc.strip(";").lstrip("L").replace("/", ".")
                     is_manifest_activity = class_name_dotted in manifest_activity_names
                     is_manifest_service = class_name_dotted in manifest_service_names
-                    if any(x.lower() in clsdesc.lower() for x in rmcp_class_names) or class_has_rmcp_token or is_manifest_activity or is_manifest_service or intent_methods:
+                    is_target_voice_service = class_name_dotted in (
+                        "com.openai.feature.assistant.impl.AssistantVoiceInteractionService",
+                        "com.openai.feature.assistant.impl.AssistantVoiceInteractionSessionService",
+                    )
+                    if is_target_voice_service:
+                        service_match_diagnostics.append(
+                            f"DEX_TARGET_FOUND {apk_path.name} classes{dex_index+1}.dex {clsdesc}"
+                        )
+                    if any(x.lower() in clsdesc.lower() for x in rmcp_class_names) or class_has_rmcp_token or is_manifest_activity or is_manifest_service or is_target_voice_service or intent_methods:
                         selected_class_dump.append(f"\n### CLASS {apk_path.name} classes{dex_index+1}.dex {clsdesc}")
                         dump_methods = [(cm, list(cm.get_code().get_bc().get_instructions()) if cm.get_code() is not None else [])
-                                        for cm in cls.get_methods()] if (is_manifest_activity or is_manifest_service) else intent_methods
+                                        for cm in cls.get_methods()] if (is_manifest_activity or is_manifest_service or is_target_voice_service) else intent_methods
                         for cm, ins in dump_methods:
                             selected_class_dump.append(f"\n## METHOD {cm.get_class_name()}->{cm.get_name()}{cm.get_descriptor()}")
                             selected_class_dump.extend(f"  {i.get_name()} {i.get_output()}" for i in ins)
@@ -160,6 +169,7 @@ def main():
                             full_target_methods.extend(f"  {ins.get_name()} {ins.get_output()}" for ins in insns)
         except Exception as exc:
             inventory.append(f"ANALYSIS ERROR for {apk_path.name}: {type(exc).__name__}: {exc}")
+    inventory.extend(["", "Voice service class diagnostics:"] + service_match_diagnostics)
     write("apk_inventory.txt", "\n".join(inventory) + "\n")
     write("manifest_index.txt", "\n".join(manifests) + "\n")
     write("service_components.txt", "\\n".join(sorted(set(service_component_lines))) + "\\n")
