@@ -62,7 +62,7 @@ def main():
                 for cls in dex.get_classes():
                     clsdesc = cls.get_name()
                     rmcp_class_names = ("Lfwr0;", "Lb940;", "RmcpHttp2Server", "ExecutorEnrollment", "LocalFunctionExecutorImpl", "Lwfz;", "Lbc30;", "DeviceExecutor", "Lxb30;", "Lc0z0;", "Ls18;", "Ls5f0;", "Lqwx;")
-                    rmcp_tokens = ("x-codex-rmcp-grant", "noise_hybrid_ik_v1", "RMCP handshake grant rejected", "Missing Noise handshake", "connection_protocol", "executor_registration_id", "HTTP/2 connection closed", "RMCP provider disconnected", "RmcpHttp2Server$Frame")
+                    rmcp_tokens = ("x-codex-rmcp-grant", "noise_hybrid_ik_v1", "RMCP handshake grant rejected", "Missing Noise handshake", "connection_protocol", "executor_registration_id", "HTTP/2 connection closed", "RMCP provider disconnected", "RmcpHttp2Server$Frame", "RmcpHttp2Server", "onFrame(Lcom/openai/feature/deviceexecutor/impl/RmcpHttp2Server$Frame;)V")
                     class_has_rmcp_token = any(
                         any(token.lower() in ins.get_output().lower() for token in rmcp_tokens)
                         for cm in cls.get_methods() if cm.get_code() is not None
