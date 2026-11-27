@@ -14,6 +14,9 @@ NEEDLES = (
     "RmcpHttp2Server", "requiresLocalExecutor", "executorRegistrationId",
     "use_handle_rmcp", "x-codex-rmcp-grant", "RMCP provider disconnected",
     "noise_hybrid_ik_v1", "RMCP handshake grant rejected", "Missing Noise handshake",
+    "android.intent.action.SEND", "android.intent.action.SEND_MULTIPLE",
+    "android.intent.action.PROCESS_TEXT", "android.intent.extra.PROCESS_TEXT",
+    "android.intent.extra.TEXT", "getIntent", "onNewIntent",
     "HTTP/2 connection closed", "RMCP provider disconnected", "RmcpHttp2Server$Frame",
     "x-codex-rmcp-grant", "handshake grant", "noise", "rmcp server",
 )
@@ -70,13 +73,28 @@ def main():
                         for cm in cls.get_methods() if cm.get_code() is not None
                         for ins in cm.get_code().get_bc().get_instructions()
                     )
-                    if any(x.lower() in clsdesc.lower() for x in rmcp_class_names) or class_has_rmcp_token:
+                    intent_tokens = ("android.intent.action.SEND", "android.intent.action.SEND_MULTIPLE",
+                                     "android.intent.action.PROCESS_TEXT", "android.intent.extra.PROCESS_TEXT",
+                                     "android.intent.extra.TEXT")
+                    intent_methods = []
+                    for cm in cls.get_methods():
+                        ccode = cm.get_code()
+                        if ccode is None:
+                            continue
+                        ins = list(ccode.get_bc().get_instructions())
+                        desc = f"{cm.get_class_name()}->{cm.get_name()}{cm.get_descriptor()}"
+                        if any(t.lower() in desc.lower() for t in ("onNewIntent", "getIntent")) or any(
+                            any(t.lower() in i.get_output().lower() for t in intent_tokens) for i in ins
+                        ):
+                            intent_methods.append((cm, ins))
+                    is_main_activity = "com/openai/chatgpt/MainActivity" in clsdesc
+                    if any(x.lower() in clsdesc.lower() for x in rmcp_class_names) or class_has_rmcp_token or is_main_activity or intent_methods:
                         selected_class_dump.append(f"\n### CLASS {apk_path.name} classes{dex_index+1}.dex {clsdesc}")
-                        for cm in cls.get_methods():
+                        dump_methods = [(cm, list(cm.get_code().get_bc().get_instructions()) if cm.get_code() is not None else [])
+                                        for cm in cls.get_methods()] if is_main_activity else intent_methods
+                        for cm, ins in dump_methods:
                             selected_class_dump.append(f"\n## METHOD {cm.get_class_name()}->{cm.get_name()}{cm.get_descriptor()}")
-                            ccode = cm.get_code()
-                            if ccode is not None:
-                                selected_class_dump.extend(f"  {i.get_name()} {i.get_output()}" for i in ccode.get_bc().get_instructions())
+                            selected_class_dump.extend(f"  {i.get_name()} {i.get_output()}" for i in ins)
                     for method in cls.get_methods():
                         code = method.get_code()
                         if code is None:
