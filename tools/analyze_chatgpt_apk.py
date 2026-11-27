@@ -116,6 +116,7 @@ def main():
     write("target_method_full.txt", "\n".join(full_target_methods) + "\n")
     write("selected_classes_full.txt", "\n".join(selected_class_dump) + "\n")
     write("server_reference_methods.txt", "\n".join(server_reference_methods) + "\n")
+    write("handshake_callers.txt", "\n".join(handshake_callers) + "\n")
     print(f"Inspected {len(apk_paths)} APK(s); string hits={len(dex_lines)}; methods={len(method_lines)}")
 
 if __name__ == "__main__":
