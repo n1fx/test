@@ -47,17 +47,38 @@ def main():
     server_reference_methods = []
     handshake_callers = []
     selected_class_dump = []
+    activity_component_lines = []
     for apk_path in apk_paths:
         inventory.append(f"\n{apk_path} ({apk_path.stat().st_size} bytes)")
         try:
             a, dexes, analysis = AnalyzeAPK(str(apk_path))
             manifest = a.get_android_manifest_xml()
+            manifest_activity_names = set()
             if manifest is not None:
                 from lxml import etree
                 manifest_text = etree.tostring(manifest, encoding='unicode', pretty_print=True)
                 manifest_name = apk_path.stem + ".manifest.xml"
                 write(manifest_name, manifest_text)
                 manifests.append(manifest_name)
+                package_name = a.get_package() or ""
+                android_ns = "{http://schemas.android.com/apk/res/android}"
+                for node in manifest.iter():
+                    tag = node.tag.split("}")[-1]
+                    if tag not in ("activity", "activity-alias"):
+                        continue
+                    name = node.get(android_ns + "name")
+                    target = node.get(android_ns + "targetActivity")
+                    for component in (name, target):
+                        if not component:
+                            continue
+                        if component.startswith("."):
+                            component = package_name + component
+                        elif "." not in component:
+                            component = package_name + "." + component
+                        manifest_activity_names.add(component)
+                        activity_component_lines.append(
+                            f"{apk_path.name}\\t{tag}\\t{component}\\talias_target={target or ''}"
+                        )
             for dex_index, dex in enumerate(dexes):
                 strings = list(dex.get_strings())
                 hits = [(s, [n for n in NEEDLES if n.lower() in s.lower()]) for s in strings]
@@ -87,11 +108,12 @@ def main():
                             any(t.lower() in i.get_output().lower() for t in intent_tokens) for i in ins
                         ):
                             intent_methods.append((cm, ins))
-                    is_main_activity = "com/openai/chatgpt/MainActivity" in clsdesc
-                    if any(x.lower() in clsdesc.lower() for x in rmcp_class_names) or class_has_rmcp_token or is_main_activity or intent_methods:
+                    class_name_dotted = clsdesc.strip(";").lstrip("L").replace("/", ".")
+                    is_manifest_activity = class_name_dotted in manifest_activity_names
+                    if any(x.lower() in clsdesc.lower() for x in rmcp_class_names) or class_has_rmcp_token or is_manifest_activity or intent_methods:
                         selected_class_dump.append(f"\n### CLASS {apk_path.name} classes{dex_index+1}.dex {clsdesc}")
                         dump_methods = [(cm, list(cm.get_code().get_bc().get_instructions()) if cm.get_code() is not None else [])
-                                        for cm in cls.get_methods()] if is_main_activity else intent_methods
+                                        for cm in cls.get_methods()] if is_manifest_activity else intent_methods
                         for cm, ins in dump_methods:
                             selected_class_dump.append(f"\n## METHOD {cm.get_class_name()}->{cm.get_name()}{cm.get_descriptor()}")
                             selected_class_dump.extend(f"  {i.get_name()} {i.get_output()}" for i in ins)
@@ -129,6 +151,7 @@ def main():
             inventory.append(f"ANALYSIS ERROR for {apk_path.name}: {type(exc).__name__}: {exc}")
     write("apk_inventory.txt", "\n".join(inventory) + "\n")
     write("manifest_index.txt", "\n".join(manifests) + "\n")
+    write("activity_components.txt", "\n".join(sorted(set(activity_component_lines))) + "\n")
     write("mcp_executor_strings.txt", "\n".join(sorted(set(dex_lines))) + "\n")
     write("mcp_executor_methods_index.txt", "\n".join(sorted(set(method_lines))) + "\n")
     write("mcp_executor_methods_disassembly.txt", "\n".join(disassembly) + "\n")
