@@ -1,0 +1,25 @@
+
+### base.apk classes7.dex Lc0z0;-><init>(Lwqv; Lkotlin/jvm/functions/Function2; Lkotlin/jvm/functions/Function2;)V
+  invoke-direct v8, Ljava/lang/Object;-><init>()V
+  iput-object v9, v8, Lc0z0;->a Lwqv;
+  iput-object v10, v8, Lc0z0;->b Lkotlin/jvm/functions/Function2;
+  iput-object v11, v8, Lc0z0;->c Lkotlin/jvm/functions/Function2;
+  new-instance v9, Lock0;
+  invoke-direct v9, Lock0;-><init>()V
+  iput-object v9, v8, Lc0z0;->d Lock0;
+  new-instance v9, Ljava/util/LinkedHashMap;
+  invoke-direct v9, Ljava/util/LinkedHashMap;-><init>()V
+  iput-object v9, v8, Lc0z0;->e Ljava/util/LinkedHashMap;
+  new-instance v9, Li0z0;
+  new-instance v0, Lmtu0;
+  const/4 v6, 0
+  const/4 v7, 1
+  const/4 v1, 1
+  const-class v3, Lc0z0;
+  const-string v4, "onFrame"
+  const-string v5, "onFrame(Lcom/openai/feature/deviceexecutor/impl/RmcpHttp2Server$Frame;)V"
+  move-object v2, v8
+  invoke-direct/range v0 ... v7, Lmtu0;-><init>(I Ljava/lang/Object; Ljava/lang/Class; Ljava/lang/String; Ljava/lang/String; I B)V
+  invoke-direct v9, v0, Li0z0;-><init>(Lmtu0;)V
+  iput-object v9, v2, Lc0z0;->f Li0z0;
+  return-void 
