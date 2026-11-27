@@ -9,6 +9,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: apk-analysis-20261126
+  cancel-in-progress: false
 jobs:
   analyze:
     runs-on: ubuntu-latest
@@ -40,5 +43,13 @@ jobs:
             echo "No analysis output changes to commit."
           else
             git commit -m "Add ChatGPT APK static analysis results"
-            git push origin apk-analysis-20261126
+            for attempt in 1 2 3; do
+              git pull --rebase origin apk-analysis-20261126
+              if git push origin apk-analysis-20261126; then
+                exit 0
+              fi
+              sleep 2
+            done
+            echo "Push failed after retries" >&2
+            exit 1
           fi
