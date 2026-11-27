@@ -9,3 +9,7 @@ work/extracted/ChatGPT_APK/split_config.arm64_v8a.apk (21075081 bytes)
 work/extracted/ChatGPT_APK/split_config.ja.apk (876754 bytes)
 
 work/extracted/ChatGPT_APK/split_config.xxhdpi.apk (464644 bytes)
+
+Voice service class diagnostics:
+DEX_TARGET_FOUND base.apk classes5.dex Lcom/openai/feature/assistant/impl/AssistantVoiceInteractionService;
+DEX_TARGET_FOUND base.apk classes5.dex Lcom/openai/feature/assistant/impl/AssistantVoiceInteractionSessionService;
