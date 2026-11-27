@@ -37,6 +37,12 @@
 ### base.apk classes3.dex La0g0;-><init>(Lur; Ljava/util/Map; Lg681;)V
   const-string v1, "LocalFunctionExecutorImpl"
 
+### base.apk classes3.dex Lccy0;->toString()Ljava/lang/String;
+  const-string v0, ", noiseFactor="
+
+### base.apk classes3.dex Lcu70;->i(F)V
+  const-string v2, "noiseFactor must not be NaN"
+
 ### base.apk classes3.dex Lfwa1;->d0(Lxr3;)Lhhi0;
   const-string v1, "type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction"
 
@@ -45,6 +51,9 @@
 
 ### base.apk classes3.dex Lfwa1;->y(Ljava/lang/String; Ljava/lang/String;)Lhhi0;
   const-string v0, "type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction"
+
+### base.apk classes3.dex Lhf51;->l(I Ll2t;)Ljava/lang/Object;
+  const-string v8, "Truncated Noise record"
 
 ### base.apk classes3.dex Lhf71;->P(Lmo80; Ljava/lang/String; Ljava/lang/String; Lkotlinx/serialization/json/c; Lnqx0; Lkotlin/jvm/functions/Function0;)Lmo80;
   const-string v3, "item/mcpToolCall/progress"
@@ -87,6 +96,12 @@
 ### base.apk classes4.dex Lgai1;->k(Ljava/lang/String;)Lvul;
   const-string v3, "item/mcpToolCall/progress"
 
+### base.apk classes4.dex Lgti1;->e(Z Lt1d1; Lyeg1; Z Z)V
+  const-string v7, "noiseTexture"
+
+### base.apk classes4.dex Lgvi1;->g(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)[B
+  const-string v0, "codex-exec-server-relay-noise/v1"
+
 ### base.apk classes4.dex Lhhi1;->k(Lpom;)Z
   const-string v3, "mcp_tool_execution_error"
 
@@ -99,12 +114,18 @@
 ### base.apk classes4.dex Lkb30;->toString()Ljava/lang/String;
   const-string v0, "ExecutorRegistrationId(value="
 
+### base.apk classes4.dex Lkn90;-><clinit>()V
+  const-string v28, "Noise"
+
 ### base.apk classes4.dex Llb30;->serialize(Lkotlinx/serialization/encoding/Encoder; Ljava/lang/Object;)V
   const-string v0, "noise_hybrid_ik_v1"
 
 ### base.apk classes4.dex Lmkh1;->p(Ln2d;)Lkotlinx/serialization/json/c;
   const-string v2, "mcpServer/elicitation/request"
   const-string v2, "mcp_tool_call"
+
+### base.apk classes4.dex Lmol0;->a([B [B I)[B
+  const-string v5, "Noise cipher exhausted or closed"
 
 ### base.apk classes4.dex Lnb30;-><init>(I Lrol0; Ljava/lang/String;)V
   const-string v3, "noise_hybrid_ik_v1"
@@ -115,11 +136,79 @@
 ### base.apk classes4.dex Lob30;-><clinit>()V
   const-string v0, "executorRegistrationId"
 
+### base.apk classes4.dex Lool0;->e([B [B)Lph91;
+  const-string v2, "Noise_hybridIK_25519+MLKEM768_AESGCM_SHA256"
+
+### base.apk classes4.dex Lpol0;->serialize(Lkotlinx/serialization/encoding/Encoder; Ljava/lang/Object;)V
+  const-string v1, "Noise_hybridIK_X25519+MLKEM768_AESGCM_SHA256"
+
 ### base.apk classes4.dex Lq830;-><init>()V
   const-string v2, "file:///android-executor"
 
 ### base.apk classes4.dex Lq830;-><init>(I Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Lp830; Ljava/lang/String; Ll830;)V
   const-string v1, "file:///android-executor"
+
+### base.apk classes4.dex Lqr;->f(Landroid/content/Context; Landroid/graphics/RenderEffect; F J F)Landroid/graphics/RenderEffect;
+  const-string v1, "
+  uniform shader content;
+  uniform shader noise;
+  uniform float noiseAlpha;
+  layout(color) uniform half4 tintColor;
+
+  half guardedDivide(half numerator, half denominator) {
+    return denominator == 0.0 ? 0.0 : numerator / denominator;
+  }
+
+  half softLightComponent(half2 source, half2 destination) {
+    if (2.0 * source.x <= source.y) {
+      return guardedDivide(
+        destination.x * destination.x * (source.y - 2.0 * source.x),
+        destination.y
+      ) + (1.0 - destination.y) * source.x
+        + destination.x * (-source.y + 2.0 * source.x + 1.0);
+    } else if (4.0 * destination.x <= destination.y) {
+      half destinationSquared = destination.x * destination.x;
+      half destinationCubed = destinationSquared * destination.x;
+      half destinationAlphaSquared = destination.y * destination.y;
+      half destinationAlphaCubed = destinationAlphaSquared * destination.y;
+      return guardedDivide(
+        destinationAlphaSquared
+          * (source.x - destination.x * (3.0 * source.y - 6.0 * source.x - 1.0))
+          + 12.0 * destination.y * destinationSquared * (source.y - 2.0 * source.x)
+          - 16.0 * destinationCubed * (source.y - 2.0 * source.x)
+          - destinationAlphaCubed * source.x,
+        destinationAlphaSquared
+      );
+    } else {
+      return destination.x * (source.y - 2.0 * source.x + 1.0)
+        + source.x
+        - sqrt(destination.y * destination.x) * (source.y - 2.0 * source.x)
+        - destination.y * source.x;
+    }
+  }
+
+  half4 softLight(half4 source, half4 destination) {
+    if (destination.a == 0.0) {
+      return source;
+    }
+    return half4(
+      softLightComponent(source.ra, destination.ra),
+      softLightComponent(source.ga, destination.ga),
+      softLightComponent(source.ba, destination.ba),
+      source.a + (1.0 - source.a) * destination.a
+    );
+  }
+
+  half4 main(float2 coord) {
+    half4 blurred = content.eval(coord);
+    half4 noiseColor = noise.eval(coord) * noiseAlpha;
+    half4 withNoise = softLight(noiseColor, blurred);
+    half4 tint = tintColor.rgb1 * tintColor.a;
+    return tint + withNoise * (1.0 - tintColor.a);
+  }
+"
+  const-string v1, "noise"
+  const-string v4, "noiseAlpha"
 
 ### base.apk classes4.dex Lr730;-><init>()V
   const-string v0, "file:///android-executor/device-executor"
@@ -129,6 +218,15 @@ url = "http://127.0.0.1:39801/android-executor/mcp"
 
 ### base.apk classes4.dex Lrb30;-><clinit>()V
   const-string v0, "executorRegistrationId"
+
+### base.apk classes4.dex Lrol0;-><init>(I Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+  const-string v3, "Noise_hybridIK_X25519+MLKEM768_AESGCM_SHA256"
+
+### base.apk classes4.dex Lrol0;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+  const-string v0, "Noise_hybridIK_X25519+MLKEM768_AESGCM_SHA256"
+
+### base.apk classes4.dex Lrol0;->toString()Ljava/lang/String;
+  const-string v0, "NoisePublicKey(<redacted>)"
 
 ### base.apk classes4.dex Ls5f0;->t(Lool0; Ljava/lang/String; Ljava/lang/String; Lr0z0; Lq0v0; Ljava/security/SecureRandom; Lqq70; Ll2t;)Ljava/lang/Object;
   const-string v12, "RMCP handshake grant rejected"
@@ -154,6 +252,9 @@ url = "http://127.0.0.1:39801/android-executor/mcp"
 
 ### base.apk classes5.dex Li2d;-><init>(I Lw2d; Ljava/lang/String; Ljava/lang/String; Lkotlinx/serialization/json/c; Ljava/lang/String; Ljava/lang/String; Lv8f;)V
   const-string v5, "mcpServer/elicitation/request"
+
+### base.apk classes5.dex Li81;->e(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v13, "noise.invalid:443"
 
 ### base.apk classes5.dex Lk5l0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
   const-string v3, "ps/mcp"
@@ -313,6 +414,9 @@ url = "http://127.0.0.1:39801/android-executor/mcp"
 
 ### base.apk classes7.dex Lc0z0;-><init>(Lwqv; Lkotlin/jvm/functions/Function2; Lkotlin/jvm/functions/Function2;)V
   const-string v5, "onFrame(Lcom/openai/feature/deviceexecutor/impl/RmcpHttp2Server$Frame;)V"
+
+### base.apk classes7.dex Lc0z0;->a(Lkotlin/jvm/functions/Function1; Ll2t;)Ljava/lang/Object;
+  const-string v7, "HTTP/2 connection closed"
 
 ### base.apk classes7.dex Lc2n;->invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
   const-string v13, "CodexRemoteMcpServerElicitationRequestCard"
@@ -496,6 +600,21 @@ url = "http://127.0.0.1:39801/android-executor/mcp"
   const-string v0, "/backend-api/ecosystem/call_mcp"
   const-string v1, "/backend-api/ps/mcp"
 
+### base.apk classes8.dex Ll63;->c()V
+  iget-object v2, v6, Ll63;->m Landroid/media/audiofx/NoiseSuppressor;
+  iput-object v0, v6, Ll63;->m Landroid/media/audiofx/NoiseSuppressor;
+
+### base.apk classes8.dex Lol80;-><clinit>()V
+  const-string v5, "uBakedWaveNoise"
+  const-string v1, "WaveNoise"
+  const-string v3, "horizon/horizon_compact_baked_wave_noise.webp"
+
+### base.apk classes8.dex Lsl80;-><init>(I)V
+  const-string v0, "uListeningTextureNoiseScale"
+
+### base.apk classes8.dex Luf70;->q(I)Ljava/lang/String;
+  const-string v0, "NoiseFactor"
+
 ### base.apk classes8.dex Lyui1;->a(Liml0; Lky11; Lkotlin/jvm/functions/Function0; Lyuj0; Lqvq; I)V
   const v1, -1398010221
 
@@ -503,6 +622,10 @@ url = "http://127.0.0.1:39801/android-executor/mcp"
 
 ### base.apk classes9.dex Lcom/snap/valdi/exceptions/GlobalExceptionHandler;->onFatalExceptionFromCPP(Ljava/lang/Throwable; Ljava/lang/String;)Ljava/lang/String;
   invoke-virtual v0, v1, v2, Lcom/snap/valdi/exceptions/GlobalExceptionHandler$Companion;->onFatalExceptionFromCPP(Ljava/lang/Throwable; Ljava/lang/String;)Ljava/lang/String;
+
+### base.apk classes9.dex Le41;->invoke()Ljava/lang/Object;
+  const-class v8, Landroidx/camera/camera2/compat/quirk/TemporalNoiseQuirk;
+  new-instance v7, Landroidx/camera/camera2/compat/quirk/TemporalNoiseQuirk;
 
 ### base.apk classes9.dex Lkhv0;->b(Lef11; Lv930; Ll2t;)Ljava/lang/Object;
   const-string v14, "McpProtocol"
@@ -519,12 +642,21 @@ url = "http://127.0.0.1:39801/android-executor/mcp"
   check-cast v8, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
   iget-object v8, v8, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;->b Lkotlinx/serialization/json/b;
 
+### base.apk classes9.dex Lgyx0;->toString()Ljava/lang/String;
+  const-string v4, ", noiseFactor="
+
+### base.apk classes9.dex Lhyx0;->toString()Ljava/lang/String;
+  const-string v0, ", noiseFactor="
+
 ### base.apk classes9.dex Lio/modelcontextprotocol/kotlin/sdk/types/McpException;-><init>(I Ljava/lang/String; Lkotlinx/serialization/json/b; Lkotlinx/serialization/SerializationException; I)V
   iput v3, v2, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;->a I
   iput-object v5, v2, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;->b Lkotlinx/serialization/json/b;
 
 ### base.apk classes9.dex Lio/modelcontextprotocol/kotlin/sdk/types/UrlElicitationRequiredException;-><init>(Ljava/util/List; Ljava/lang/String;)V
   invoke-direct/range v3 ... v8, Lio/modelcontextprotocol/kotlin/sdk/types/McpException;-><init>(I Ljava/lang/String; Lkotlinx/serialization/json/b; Lkotlinx/serialization/SerializationException; I)V
+
+### base.apk classes9.dex Llpn0;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+  const-string v0, "HTTP/2 connection closed"
 
 ### base.apk classes9.dex Lqwx;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
   const-string v0, "RMCP provider disconnected"
@@ -543,8 +675,44 @@ url = "http://127.0.0.1:39801/android-executor/mcp"
 ### base.apk classes9.dex Lzjz0;->a(Lkotlinx/serialization/json/b;)Lyiy;
   const-string v1, "tool_result"
 
+### base.apk classes10.dex Lgpe1;->a(I)V
+  const-string v0, "NoiseSuppressor: was "
+  iget-object v2, v11, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+  invoke-static v12, Landroid/media/audiofx/NoiseSuppressor;->create(I)Landroid/media/audiofx/NoiseSuppressor;
+  iput-object v12, v11, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+  iget-object v1, v11, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+  const-string v2, "Failed to set the NoiseSuppressor state"
+  iget-object v2, v11, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+  const-string v0, "Failed to create the NoiseSuppressor instance"
+
+### base.apk classes10.dex Lgpe1;->f(Z)Z
+  const-string v0, "NoiseSuppressor: is now: "
+  iget-object v2, v5, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+  const-string v0, "Attempting to enable or disable nonexistent NoiseSuppressor."
+  iget-object v1, v5, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+  iget-object v1, v5, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+
 ### base.apk classes10.dex Lkal;->serialize(Lkotlinx/serialization/encoding/Encoder; Ljava/lang/Object;)V
   const-string v0, "CODEX_CHATGPT_HANDOFF_LIFECYCLE_ACTION_TOOL_CALLED"
+
+### base.apk classes10.dex Llivekit/org/webrtc/audio/JavaAudioDeviceModule;->b()Lrlx;
+  iget-object v1, v0, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+  invoke-virtual v3, Llivekit/org/webrtc/audio/WebRtcAudioRecord;->isNoiseSuppressorSupported()Z
+
+### base.apk classes10.dex Llivekit/org/webrtc/audio/WebRtcAudioRecord;->enableBuiltInNS(Z)Z
+  iget-object v0, v4, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+
+### base.apk classes10.dex Llivekit/org/webrtc/audio/WebRtcAudioRecord;->hasBuiltInNS()Z
+  iget-object v0, v1, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+
+### base.apk classes10.dex Llivekit/org/webrtc/audio/WebRtcAudioRecord;->isBuiltInNSEnabled()Z
+  iget-object v0, v1, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+
+### base.apk classes10.dex Llivekit/org/webrtc/audio/WebRtcAudioRecord;->isNoiseSuppressorSupported()Z
+
+### base.apk classes10.dex Llivekit/org/webrtc/audio/WebRtcAudioRecord;->j()V
+  iget-object v2, v1, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
+  iput-object v3, v1, Lgpe1;->b Landroid/media/audiofx/NoiseSuppressor;
 
 ### base.apk classes10.dex Lpfl;-><clinit>()V
   const-string v5, "type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction"

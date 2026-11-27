@@ -8,12 +8,19 @@ base.apk	classes1.dex	mcp	mcp://kakao
 base.apk	classes1.dex	mcp	mcp://komi
 base.apk	classes1.dex	mcp	rmcp
 base.apk	classes1.dex	mcp,use_handle_rmcp	use_handle_rmcp
-base.apk	classes1.dex	noise_hybrid_ik_v1	noise_hybrid_ik_v1
+base.apk	classes1.dex	noise_hybrid_ik_v1,noise	noise_hybrid_ik_v1
 base.apk	classes10.dex	mcp	/mcp
 base.apk	classes10.dex	mcp	CodexMcpExtensionAction{
 base.apk	classes10.dex	mcp	mcp-
 base.apk	classes10.dex	mcp	type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction
-base.apk	classes10.dex	mcp,x-codex-rmcp-grant	x-codex-rmcp-grant
+base.apk	classes10.dex	mcp,x-codex-rmcp-grant,x-codex-rmcp-grant	x-codex-rmcp-grant
+base.apk	classes10.dex	noise	Attempting to enable or disable nonexistent NoiseSuppressor.
+base.apk	classes10.dex	noise	Failed to create the NoiseSuppressor instance
+base.apk	classes10.dex	noise	Failed to set the NoiseSuppressor state
+base.apk	classes10.dex	noise	Landroid/media/audiofx/NoiseSuppressor;
+base.apk	classes10.dex	noise	NoiseSuppressor: is now: 
+base.apk	classes10.dex	noise	NoiseSuppressor: was 
+base.apk	classes10.dex	noise	isNoiseSuppressorSupported
 base.apk	classes10.dex	tool_call	CODEX_CHATGPT_HANDOFF_LIFECYCLE_ACTION_TOOL_CALLED
 base.apk	classes3.dex	localfunctionexecutor	LocalFunctionExecutorImpl
 base.apk	classes3.dex	mcp	686lQhd7kGqR8F2BTZNa0MCpbpQuNsmhT7vyRHy9apU=
@@ -22,7 +29,11 @@ base.apk	classes3.dex	mcp	This app tool is no longer available through dynamic t
 base.apk	classes3.dex	mcp	item/mcpToolCall/progress
 base.apk	classes3.dex	mcp	mcpServerOpenaiFormElicitation
 base.apk	classes3.dex	mcp	type.googleapis.com/protobuf_analytics_events.v1.CodexMcpExtensionAction
-base.apk	classes4.dex	Missing Noise handshake	Missing Noise handshake
+base.apk	classes3.dex	noise	, noiseFactor=
+base.apk	classes3.dex	noise	Landroidx/camera/camera2/compat/quirk/TemporalNoiseQuirk;
+base.apk	classes3.dex	noise	Truncated Noise record
+base.apk	classes3.dex	noise	noiseFactor must not be NaN
+base.apk	classes4.dex	Missing Noise handshake,noise	Missing Noise handshake
 base.apk	classes4.dex	android-executor	file:///android-executor
 base.apk	classes4.dex	android-executor	file:///android-executor/device-executor
 base.apk	classes4.dex	executorRegistrationId	ExecutorRegistrationId(value=
@@ -35,13 +46,80 @@ base.apk	classes4.dex	mcp	mcp_servers
 base.apk	classes4.dex	mcp	mcp_tool_execution_error
 base.apk	classes4.dex	mcp	setMcpModelContext
 base.apk	classes4.dex	mcp,Mcp-Session-Id	Mcp-Session-Id
-base.apk	classes4.dex	mcp,RMCP handshake grant rejected	RMCP handshake grant rejected
+base.apk	classes4.dex	mcp,RMCP handshake grant rejected,handshake grant	RMCP handshake grant rejected
 base.apk	classes4.dex	mcp,android-executor,39801	[mcp_servers.android_native]
 url = "http://127.0.0.1:39801/android-executor/mcp"
 
 base.apk	classes4.dex	mcp,android-executor,39801	http://127.0.0.1:39801/android-executor/mcp
 base.apk	classes4.dex	mcp,tool_call	mcp_tool_call
-base.apk	classes4.dex	noise_hybrid_ik_v1	noise_hybrid_ik_v1
+base.apk	classes4.dex	noise	
+  uniform shader content;
+  uniform shader noise;
+  uniform float noiseAlpha;
+  layout(color) uniform half4 tintColor;
+
+  half guardedDivide(half numerator, half denominator) {
+    return denominator == 0.0 ? 0.0 : numerator / denominator;
+  }
+
+  half softLightComponent(half2 source, half2 destination) {
+    if (2.0 * source.x <= source.y) {
+      return guardedDivide(
+        destination.x * destination.x * (source.y - 2.0 * source.x),
+        destination.y
+      ) + (1.0 - destination.y) * source.x
+        + destination.x * (-source.y + 2.0 * source.x + 1.0);
+    } else if (4.0 * destination.x <= destination.y) {
+      half destinationSquared = destination.x * destination.x;
+      half destinationCubed = destinationSquared * destination.x;
+      half destinationAlphaSquared = destination.y * destination.y;
+      half destinationAlphaCubed = destinationAlphaSquared * destination.y;
+      return guardedDivide(
+        destinationAlphaSquared
+          * (source.x - destination.x * (3.0 * source.y - 6.0 * source.x - 1.0))
+          + 12.0 * destination.y * destinationSquared * (source.y - 2.0 * source.x)
+          - 16.0 * destinationCubed * (source.y - 2.0 * source.x)
+          - destinationAlphaCubed * source.x,
+        destinationAlphaSquared
+      );
+    } else {
+      return destination.x * (source.y - 2.0 * source.x + 1.0)
+        + source.x
+        - sqrt(destination.y * destination.x) * (source.y - 2.0 * source.x)
+        - destination.y * source.x;
+    }
+  }
+
+  half4 softLight(half4 source, half4 destination) {
+    if (destination.a == 0.0) {
+      return source;
+    }
+    return half4(
+      softLightComponent(source.ra, destination.ra),
+      softLightComponent(source.ga, destination.ga),
+      softLightComponent(source.ba, destination.ba),
+      source.a + (1.0 - source.a) * destination.a
+    );
+  }
+
+  half4 main(float2 coord) {
+    half4 blurred = content.eval(coord);
+    half4 noiseColor = noise.eval(coord) * noiseAlpha;
+    half4 withNoise = softLight(noiseColor, blurred);
+    half4 tint = tintColor.rgb1 * tintColor.a;
+    return tint + withNoise * (1.0 - tintColor.a);
+  }
+
+base.apk	classes4.dex	noise	Noise
+base.apk	classes4.dex	noise	Noise cipher exhausted or closed
+base.apk	classes4.dex	noise	NoisePublicKey(<redacted>)
+base.apk	classes4.dex	noise	Noise_hybridIK_25519+MLKEM768_AESGCM_SHA256
+base.apk	classes4.dex	noise	Noise_hybridIK_X25519+MLKEM768_AESGCM_SHA256
+base.apk	classes4.dex	noise	codex-exec-server-relay-noise/v1
+base.apk	classes4.dex	noise	noise
+base.apk	classes4.dex	noise	noiseAlpha
+base.apk	classes4.dex	noise	noiseTexture
+base.apk	classes4.dex	noise_hybrid_ik_v1,noise	noise_hybrid_ik_v1
 base.apk	classes4.dex	tool_result	tool_result
 base.apk	classes5.dex	mcp	/ps/mcp
 base.apk	classes5.dex	mcp	CodexRemoteMcpServerElicitationParam
@@ -50,7 +128,8 @@ base.apk	classes5.dex	mcp	mcp-resource://codex_apps/
 base.apk	classes5.dex	mcp	mcp/skill
 base.apk	classes5.dex	mcp	mcpServer/elicitation/request
 base.apk	classes5.dex	mcp	ps/mcp
-base.apk	classes5.dex	noise_hybrid_ik_v1	noise_hybrid_ik_v1
+base.apk	classes5.dex	noise	noise.invalid:443
+base.apk	classes5.dex	noise_hybrid_ik_v1,noise	noise_hybrid_ik_v1
 base.apk	classes5.dex	tool_result	call_tool_result
 base.apk	classes5.dex	tools/call	tools/call
 base.apk	classes6.dex	deviceexecutor	DeviceExecutor
@@ -80,6 +159,7 @@ base.apk	classes6.dex	tool_result	call_tool_result
 base.apk	classes6.dex	tool_result	tool_result
 base.apk	classes6.dex	tools/call	tools/call
 base.apk	classes6.dex	tools/list	tools/list
+base.apk	classes7.dex	HTTP/2 connection closed	HTTP/2 connection closed
 base.apk	classes7.dex	mcp	
         |Tool registration will proceed, but this may cause compatibility issues.
         |Consider updating the tool name to conform to the MCP tool naming standard.
@@ -106,7 +186,7 @@ base.apk	classes7.dex	mcp	ps/mcp
 base.apk	classes7.dex	mcp	rmcp
 base.apk	classes7.dex	mcp	sendMcpMessage
 base.apk	classes7.dex	mcp	updateMcpModelContext
-base.apk	classes7.dex	mcp,deviceexecutor,RmcpHttp2Server	onFrame(Lcom/openai/feature/deviceexecutor/impl/RmcpHttp2Server$Frame;)V
+base.apk	classes7.dex	mcp,deviceexecutor,RmcpHttp2Server,RmcpHttp2Server$Frame	onFrame(Lcom/openai/feature/deviceexecutor/impl/RmcpHttp2Server$Frame;)V
 base.apk	classes7.dex	mcp,tool_call	mcp_tool_call
 base.apk	classes7.dex	mcp,tool_result	mcp_tool_result
 base.apk	classes7.dex	requiresLocalExecutor	requiresLocalExecutor
@@ -114,12 +194,21 @@ base.apk	classes7.dex	tool_result	call_tool_result
 base.apk	classes8.dex	deviceexecutor	Lcom/openai/feature/deviceexecutor/ExecutorEnrollmentException;
 base.apk	classes8.dex	mcp	/backend-api/ecosystem/call_mcp
 base.apk	classes8.dex	mcp	/backend-api/ps/mcp
+base.apk	classes8.dex	noise	Landroid/media/audiofx/NoiseSuppressor;
+base.apk	classes8.dex	noise	NoiseFactor
+base.apk	classes8.dex	noise	WaveNoise
+base.apk	classes8.dex	noise	horizon/horizon_compact_baked_wave_noise.webp
+base.apk	classes8.dex	noise	uBakedWaveNoise
+base.apk	classes8.dex	noise	uListeningTextureNoiseScale
 base.apk	classes8.dex	tool_call	tool_call
+base.apk	classes9.dex	HTTP/2 connection closed	HTTP/2 connection closed
 base.apk	classes9.dex	mcp	Closing MCP server
 base.apk	classes9.dex	mcp	Lio/modelcontextprotocol/kotlin/sdk/types/McpException;
 base.apk	classes9.dex	mcp	McpProtocol
 base.apk	classes9.dex	mcp	onFatalExceptionFromCPP
-base.apk	classes9.dex	mcp,RMCP provider disconnected	RMCP provider disconnected
+base.apk	classes9.dex	mcp,RMCP provider disconnected,RMCP provider disconnected	RMCP provider disconnected
+base.apk	classes9.dex	noise	, noiseFactor=
+base.apk	classes9.dex	noise	Landroidx/camera/camera2/compat/quirk/TemporalNoiseQuirk;
 base.apk	classes9.dex	tool_result	TOOL_RESULT
 base.apk	classes9.dex	tool_result	tool_result
 base.apk	classes9.dex	tools/call	tools/call
