@@ -87,7 +87,8 @@ def main():
                         handshake_refs = [ins.get_output() for ins in insns if "Ls5f0;->t(" in ins.get_output()]
                         if handshake_refs:
                             handshake_callers.append(f"\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")
-                            handshake_callers.extend(f"  {ins.get_name()} {ins.get_output()}" for ins in insns)\n                        if server_refs or "RmcpHttp2Server" in descriptor:
+                            handshake_callers.extend(f"  {ins.get_name()} {ins.get_output()}" for ins in insns)
+                        if server_refs or "RmcpHttp2Server" in descriptor:
                             server_reference_methods.append(f"\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")
                             server_reference_methods.extend(f"  {ins.get_name()} {ins.get_output()}" for ins in insns)
                         matching = []
