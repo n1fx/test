@@ -65,10 +65,14 @@ def main():
                 android_ns = "{http://schemas.android.com/apk/res/android}"
                 for node in manifest.iter():
                     tag = node.tag.split("}")[-1]
-                    if tag not in ("activity", "activity-alias"):
+                    if tag in ("activity", "activity-alias"):
+                        name = node.get(android_ns + "name")
+                        target = node.get(android_ns + "targetActivity")
+                    elif tag == "service":
+                        name = node.get(android_ns + "name")
+                        target = None
+                    else:
                         continue
-                    name = node.get(android_ns + "name")
-                    target = node.get(android_ns + "targetActivity")
                     for component in (name, target):
                         if not component:
                             continue
