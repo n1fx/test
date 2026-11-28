@@ -51,6 +51,7 @@ def main():
     activity_component_lines = []
     service_component_lines = []
     service_match_diagnostics = []
+    server_xref_candidates = []
     for apk_path in apk_paths:
         inventory.append(f"\n{apk_path} ({apk_path.stat().st_size} bytes)")
         try:
@@ -149,6 +150,12 @@ def main():
                         insns = list(code.get_bc().get_instructions())
                         descriptor = f"{method.get_class_name()}->{method.get_name()}{method.get_descriptor()}"
                         server_refs = [ins.get_output() for ins in insns if "RmcpHttp2Server" in ins.get_output()]
+                        launch_tokens = ("RmcpHttp2Server", "39801", "android-executor/mcp",
+                                         "x-codex-rmcp-grant", "noise_hybrid_ik_v1")
+                        candidate_hits = [ins for ins in insns if any(t.lower() in ins.get_output().lower() for t in launch_tokens)]
+                        if candidate_hits:
+                            server_xref_candidates.append(f"\\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")
+                            server_xref_candidates.extend(f"  {ins.get_name()} {ins.get_output()}" for ins in candidate_hits)
                         handshake_refs = [ins.get_output() for ins in insns if "Ls5f0;->t(" in ins.get_output()]
                         if handshake_refs:
                             handshake_callers.append(f"\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")
