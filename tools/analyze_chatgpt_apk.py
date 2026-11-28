@@ -47,6 +47,7 @@ def main():
     server_reference_methods = []
     handshake_callers = []
     selected_class_dump = []
+    voice_service_dump = []
     activity_component_lines = []
     service_component_lines = []
     service_match_diagnostics = []
@@ -135,6 +136,10 @@ def main():
                         dump_methods = [(cm, list(cm.get_code().get_bc().get_instructions()) if cm.get_code() is not None else [])
                                         for cm in cls.get_methods()] if (is_manifest_activity or is_manifest_service or is_target_voice_service) else intent_methods
                         for cm, ins in dump_methods:
+                            if is_target_voice_service:
+                                voice_service_dump.append(f"\\n### CLASS {apk_path.name} classes{dex_index+1}.dex {clsdesc}")
+                                voice_service_dump.append(f"\\n## METHOD {cm.get_class_name()}->{cm.get_name()}{cm.get_descriptor()}")
+                                voice_service_dump.extend(f"  {i.get_name()} {i.get_output()}" for i in ins)
                             selected_class_dump.append(f"\n## METHOD {cm.get_class_name()}->{cm.get_name()}{cm.get_descriptor()}")
                             selected_class_dump.extend(f"  {i.get_name()} {i.get_output()}" for i in ins)
                     for method in cls.get_methods():
