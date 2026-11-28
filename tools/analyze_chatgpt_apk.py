@@ -155,7 +155,10 @@ def main():
                         candidate_hits = [ins for ins in insns if any(t.lower() in ins.get_output().lower() for t in launch_tokens)]
                         if candidate_hits:
                             server_xref_candidates.append(f"\\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")
-                            server_xref_candidates.extend(f"  {ins.get_name()} {ins.get_output()}" for ins in candidate_hits)
+                            server_xref_candidates.append(f"  HIT_COUNT={len(candidate_hits)} INSTRUCTION_COUNT={len(insns)}")
+                            # Preserve the full candidate method for constructor,
+                            # register flow, and lifecycle-call inspection.
+                            server_xref_candidates.extend(f"  {ins.get_name()} {ins.get_output()}" for ins in insns)
                         handshake_refs = [ins.get_output() for ins in insns if "Ls5f0;->t(" in ins.get_output()]
                         if handshake_refs:
                             handshake_callers.append(f"\n### {apk_path.name} classes{dex_index+1}.dex {descriptor}")
